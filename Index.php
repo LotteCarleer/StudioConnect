@@ -8,6 +8,5 @@
 <body>
    Hello! 
    test test test
-   <textarea name="click" id="">click</textarea>
 </body>
 </html>
