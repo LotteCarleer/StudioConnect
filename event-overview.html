@@ -4,8 +4,506 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+ 
+    <style>
+ :root {
+            --bg-color: #282626;
+            --text-color: #FDFDFD;
+            --accent-color: #FE0D00;
+            --card-bg: #333131;
+            --font-main: 'Rubik', sans-serif;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            padding-bottom:120px;
+        }
+
+        /* HEADER */
+
+        .main-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px;
+            border-bottom:1px solid #fe0d005a;
+        }
+
+        .logo-area{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .logo-placeholder{
+            
+            color:white;
+            width:60px;
+            height:45px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-weight:bold;
+            font-size:24px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+
+        .logo-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .logo-text strong{
+            font-size:16px;
+        }
+
+        .logo-text span{
+            color:#888;
+            font-size:12px;
+        }
+
+        .language-toggles{
+            display:flex;
+            gap:8px;
+        }
+
+        .lang-btn{
+            background:#444;
+            color:white;
+            border:none;
+            padding:8px 14px;
+            border-radius:8px;
+            font-family:var(--font-main);
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .lang-btn.active{
+            background:var(--accent-color);
+        }
+
+        /* EVENT PAGE */
+
+.event-page{
+    padding-bottom:140px;
+}
+
+/* HERO */
+
+.event-hero{
+    height:425px;
+
+    background:
+    radial-gradient(circle at top left, rgba(254,13,0,0.35), transparent 70%),
+    linear-gradient(180deg, #651313 0%, #2A2020 100%);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 32px;
+}
+
+.hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-icon{
+    width:82px;
+    height:82px;
+
+    border-radius:24px;
+
+    background:var(--accent-color);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:32px;
+}
+
+.hero-icon img{
+    width:34px;
+    height:34px;
+}
+
+.hero-content h1{
+    font-size:28px;
+    line-height:1.3;
+    margin-bottom:18px;
+    font-weight:700;
+}
+
+.hero-content p{
+    font-size:14px;
+    line-height:1.8;
+    color:#D1CFCF;
+    max-width:250px;
+}
+
+
+.info-section,
+.expect-section,
+.button-section{
+    padding:24px;
+}
+
+
+
+.info-card{
+    background:#333131;
+
+    border-radius:28px;
+
+    padding:24px;
+
+    display:flex;
+    gap:18px;
+
+    border:1px solid rgba(255,255,255,0.04);
+}
+
+.info-icon{
+    min-width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:#FE0D00;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.info-icon img{
+    width:22px;
+    height:22px;
+}
+
+.info-card p{
+    color:#D4D0D0;
+    font-size:14px;
+    line-height:1.9;
+}
+
+
+
+.expect-section h2{
+    font-size:18px;
+    margin-bottom:22px;
+}
+
+
+
+.expect-card{
+    background:#333131;
+
+    border-radius:22px;
+
+    padding:22px;
+
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+
+    margin-bottom:16px;
+
+    border:1px solid rgba(255,255,255,0.04);
+}
+
+.expect-icon{
+    min-width:40px;
+    height:40px;
+
+    border-radius:14px;
+
+    background:rgba(254,13,0,0.08);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.expect-icon img{
+    width:18px;
+    height:18px;
+}
+
+.expect-card p{
+    color:#D5D2D2;
+    font-size:14px;
+    line-height:1.8;
+}
+
+
+
+.event-button{
+    width:100%;
+    height:64px;
+
+    border:none;
+    border-radius:20px;
+
+    background:var(--accent-color);
+
+    color:white;
+
+    font-size:18px;
+    font-weight:700;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+
+    font-family:var(--font-main);
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.event-button span{
+    font-size:24px;
+    margin-top:-2px;
+}
+
+.event-button:hover{
+    transform:translateY(-2px);
+}
+
+       
+       
+
+        .bottom-nav{
+            position:fixed;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            background:#2f2d2d;
+            padding:18px 10px;
+            display:flex;
+            justify-content:space-around;
+            box-shadow:0 15px 35px rgba(0,0,0,0.4);
+            border-top:1px solid #4a4a4a;
+        }
+
+       .nav-item{
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:#8e8e8e;
+    font-size:13px;
+    cursor:pointer;
+}
+
+        .nav-icon{
+            width:56px;
+            height:56px;
+            border-radius:18px;
+            background:#3a3939;
+            border:1px solid #5c5c5c;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:22px;
+        }
+
+      
+
+        .nav-item.active .nav-icon{
+            background:var(--accent-color);
+            color:white;
+            border:none;
+            
+        }
+
+
+    </style>
+
 </head>
 <body>
-    hellowwww
+    
+
+  
+
+    <header class="main-header">
+
+        <div class="logo-area">
+            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
+
+            <div class="logo-text">
+                <strong>AED STUDIOS</strong>
+                <span>Creative Network</span>
+            </div>
+        </div>
+
+        <div class="language-toggles">
+            <button class="lang-btn">NL</button>
+            <button class="lang-btn active">EN</button>
+            <button class="lang-btn">FR</button>
+        </div>
+
+    </header>
+
+
+<main class="event-page">
+
+    
+
+    <section class="event-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-icon">
+                <img src="./images/EventIconfull.svg" alt="Event">
+            </div>
+
+            <h1>
+                2026 Networking <br>
+                Events
+            </h1>
+
+            <p>
+                Connect with creatives across all AED Studios
+            </p>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="info-section">
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                <img src="./images/Stars.svg" alt="Info">
+            </div>
+
+            <p>
+                Every quarter we're hosting an exclusive networking event bringing together professionals from all studios. A unique opportunity to make new connections, share knowledge, and collaborate on future projects.
+            </p>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="expect-section">
+
+        <h2>What to Expect</h2>
+
+        <!-- ITEM -->
+
+        <div class="expect-card">
+
+            <div class="expect-icon">
+                <img src="./images/PeopleIcon.svg" alt="People">
+            </div>
+
+            <p>
+                Networking opportunities with producers, developers, designers and more
+            </p>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="expect-card">
+
+            <div class="expect-icon">
+                <img src="./images/StarIconred.svg" alt="Knowledge">
+            </div>
+
+            <p>
+                Knowledge sharing about new technologies and creative processes
+            </p>
+
+        </div>
+
+        <!-- ITEM -->
+
+        <div class="expect-card">
+
+            <div class="expect-icon">
+                <img src="./images/Calenderred.svg" alt="Projects">
+            </div>
+
+            <p>
+                Opportunities for future collaboration and projects
+            </p>
+
+        </div>
+
+    </section>
+
+   
+
+    <section class="button-section">
+
+        <button class="event-button">
+
+            VIEW AVAILABLE DATES
+
+            <span>→</span>
+
+        </button>
+
+    </section>
+
+</main>
+
+
+   
+
+   <nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item ">
+        <div class="nav-icon">
+            <img src="./images/HomeIcon.svg" alt="Home">
+        </div>
+        <span>Home</span>
+    </a>
+
+    <a href="map.html" class="nav-item">
+        <div class="nav-icon">
+            <img src="./images/MapIcontrans.svg" alt="Map">
+        </div>
+        <span>Map</span>
+    </a>
+
+    <a href="studios.html" class="nav-item">
+        <div class="nav-icon">
+            <img src="./images/StudioIcontrans.svg" alt="Studio's">
+        </div>
+        <span>Studio's</span>
+    </a>
+
+    <a href="events.html" class="nav-item active">
+        <div class="nav-icon">
+            <img src="./images/EventIconfull.svg" alt="Event">
+        </div>
+        <span>Event</span>
+    </a>
+
+</nav>
 </body>
 </html>
