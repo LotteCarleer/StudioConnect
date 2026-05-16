@@ -30,56 +30,66 @@
             padding-bottom: 40px;
         }
 
-        /* Header Styling */
-        .main-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #444;
-            background-color: var(--bg-color);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+       
+        .main-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px;
+            border-bottom:1px solid #fe0d005a;
         }
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 15px;
+        .logo-area{
+            display:flex;
+            align-items:center;
+            gap:12px;
         }
 
-        .main-logo {
-            height: 35px;
-            width: auto;
-            object-fit: contain;
+        .logo-placeholder{
+            
+            color:white;
+            width:60px;
+            height:45px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-weight:bold;
+            font-size:24px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            font-size: 12px;
+        .logo-text{
+            display:flex;
+            flex-direction:column;
         }
 
-        .language-toggles {
-            display: flex;
-            gap: 5px;
+        .logo-text strong{
+            font-size:16px;
         }
 
-        .lang-btn {
-            background: #444;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-family: var(--font-main);
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 12px;
+        .logo-text span{
+            color:#888;
+            font-size:12px;
         }
 
-        .lang-btn.active {
-            background: var(--accent-color);
+        .language-toggles{
+            display:flex;
+            gap:8px;
+        }
+
+        .lang-btn{
+            background:#444;
+            color:white;
+            border:none;
+            padding:8px 14px;
+            border-radius:8px;
+            font-family:var(--font-main);
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .lang-btn.active{
+            background:var(--accent-color);
         }
 
         /* Pagina Content Wrapper */
@@ -203,23 +213,72 @@
             margin-left: 15px;
             opacity: 1; /* Verhoogd naar 1 voor een vollere kleur */
         }
+
+          .bottom-nav{
+            position:fixed;
+            bottom:0px;
+            left:0px;
+            right:0px;
+            background:#2f2d2d;
+            padding:18px 10px;
+            display:flex;
+            justify-content:space-around;
+            box-shadow:0 15px 35px rgba(0,0,0,0.4);
+            border-top:1px solid #4a4a4a;
+        }
+
+      .nav-item{
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    color:#8e8e8e;
+    font-size:13px;
+    cursor:pointer;
+}
+
+        .nav-icon{
+            width:56px;
+            height:56px;
+            border-radius:18px;
+            background:#3a3939;
+            border:1px solid #5c5c5c;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:22px;
+        }
+
+      
+
+        .nav-item.active .nav-icon{
+            background:var(--accent-color);
+            color:white;
+            border:none;
+            
+        }
     </style>
 </head>
 <body>
 
-    <header class="main-header">
+   <header class="main-header">
+
         <div class="logo-area">
-            <img src="images/aed_studios_logo_white 2.svg" alt="AED Studios Logo" class="main-logo">
+            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
+
             <div class="logo-text">
                 <strong>AED STUDIOS</strong>
                 <span>Creative Network</span>
             </div>
         </div>
+
         <div class="language-toggles">
             <button class="lang-btn">NL</button>
             <button class="lang-btn active">EN</button>
             <button class="lang-btn">FR</button>
         </div>
+
     </header>
 
     <main class="page-content">
@@ -239,6 +298,38 @@
         </div>
 
     </main>
+
+    <nav class="bottom-nav">
+
+    <a href="index.html" class="nav-item ">
+        <div class="nav-icon">
+            <img src="./images/HomeIcon.svg" alt="Home">
+        </div>
+        <span>Home</span>
+    </a>
+
+    <a href="map.html" class="nav-item">
+        <div class="nav-icon">
+            <img src="./images/MapIcontrans.svg" alt="Map">
+        </div>
+        <span>Map</span>
+    </a>
+
+    <a href="overview.html" class="nav-item active">
+        <div class="nav-icon">
+            <img src="./images/Studiofull.svg" alt="Studio's">
+        </div>
+        <span>Studio's</span>
+    </a>
+
+   <a href="#" id="eventNavBtn" class="nav-item">
+        <div class="nav-icon">
+            <img src="./images/EventIcontrans.svg" alt="Event">
+        </div>
+        <span>Event</span>
+    </a>
+
+</nav>
 
     <script>
         // Database Array
