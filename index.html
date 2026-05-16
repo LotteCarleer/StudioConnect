@@ -344,7 +344,7 @@
         <span>Studio's</span>
     </a>
 
-    <a href="EventCode.html" class="nav-item ">
+   <a href="#" id="eventNavBtn" class="nav-item">
         <div class="nav-icon">
             <img src="./images/EventIcontrans.svg" alt="Event">
         </div>
@@ -468,19 +468,34 @@
 
         
 
-        const navItems = document.querySelectorAll('.nav-item');
 
-        navItems.forEach(item => {
+    const eventNavBtn = document.getElementById("eventNavBtn");
 
-            item.addEventListener('click', () => {
+    eventNavBtn.addEventListener("click", (e) => {
 
-                navItems.forEach(i => i.classList.remove('active'));
+        e.preventDefault();
 
-                item.classList.add('active');
+        const access = sessionStorage.getItem("eventAccess");
 
-            });
+        /* AL INGELOGD */
 
-        });
+        if(access === "granted"){
+
+            window.location.href = "event-overview.html";
+
+        }
+
+        /* NIET INGELOGD */
+
+        else{
+
+            window.location.href = "EventCode.html";
+
+        }
+
+    });
+
+
 
     </script>  
 
