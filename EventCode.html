@@ -265,6 +265,7 @@
 
     </style>
 </head>
+
 <body>
 
   
@@ -358,63 +359,73 @@
   
 <script> 
 
-const input = document.getElementById('accessCode');
-const button = document.getElementById('submitBtn');
-const errorBox = document.getElementById('errorBox');
 
-/* JUISTE CODE */
+    const input = document.getElementById('accessCode');
+    const button = document.getElementById('submitBtn');
+    const errorBox = document.getElementById('errorBox');
 
-const validCode = "Studio123";
+    /* JUISTE CODE */
 
-/* BUTTON ACTIVE ALS INPUT NIET LEEG IS */
+    const validCode = "Studio123";
 
-input.addEventListener('input', () => {
+    /* BUTTON ACTIVE */
 
-    if(input.value.trim() !== ""){
+    input.addEventListener('input', () => {
 
-        button.classList.add('active');
+        if(input.value.trim() !== ""){
 
-    }else{
+            button.classList.add('active');
 
-        button.classList.remove('active');
+        }else{
 
-    }
+            button.classList.remove('active');
 
-});
+        }
 
-/* SUBMIT */
+    });
 
-button.addEventListener('click', () => {
+    /* SUBMIT */
 
-    const enteredCode = input.value.trim();
+    button.addEventListener('click', () => {
 
-    /* RESET */
+        const enteredCode = input.value.trim();
 
-    errorBox.classList.remove('show');
+        /* RESET */
 
-    button.classList.remove('error');
+        errorBox.classList.remove('show');
 
-    /* CORRECTE CODE */
+        button.classList.remove('error');
 
-    if(enteredCode === validCode){
+        button.textContent = "SUBMIT";
 
-        window.location.href = "event-overview.html";
+        /* CORRECTE CODE */
 
-    }
+        if(enteredCode === validCode){
 
-    /* FOUTE CODE */
+            /* TOEGANG OPSLAAN */
 
-    else{
+            sessionStorage.setItem("eventAccess", "granted");
 
-        errorBox.classList.add('show');
+            /* REDIRECT */
 
-        button.classList.add('error');
+            window.location.href = "event-overview.html";
 
-        button.textContent = "PLEASE TRY AGAIN";
+        }
 
-    }
+        /* FOUTE CODE */
 
-});
+        else{
+
+            errorBox.classList.add('show');
+
+            button.classList.add('error');
+
+            button.textContent = "PLEASE TRY AGAIN";
+
+        }
+
+    });
+
 
 
 </script>

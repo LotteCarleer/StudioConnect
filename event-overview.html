@@ -337,6 +337,17 @@
     </style>
 
 </head>
+<script>
+
+    const access = sessionStorage.getItem("eventAccess");
+
+    if(access !== "granted"){
+
+        window.location.href = "access-code.html";
+
+    }
+
+</script>
 <body>
     
 
