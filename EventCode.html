@@ -94,8 +94,129 @@
             background:var(--accent-color);
         }
 
+        /* ACCESS PAGE */
+
+.access-page{
+    padding:50px 32px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.access-icon{
+    width:82px;
+    height:82px;
+    border-radius:24px;
+    background:var(--accent-color);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:32px;
+}
+
+.access-icon img{
+    width:30px;
+    height:30px;
+}
+
+.access-page h1{
+    font-size:24px;
+    margin-bottom:16px;
+    font-weight:700;
+}
+
+.subtitle{
+    text-align:center;
+    color:#A0A0A0;
+    font-size:14px;
+    line-height:1.7;
+    max-width:280px;
+    margin-bottom:28px;
+}
+
+/* ERROR */
+
+.error-box{
+    width:100%;
+    border:2px solid var(--accent-color);
+    border-radius:18px;
+    padding:18px;
+    color:#B8AFAF;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:20px;
+
+    display:none;
+}
+
+.error-box.show{
+    display:block;
+}
+
+/* INPUT */
+
+#accessCode{
+    width:100%;
+    height:64px;
+
+    background:#343232;
+
+    border:2px solid #4A4747;
+    border-radius:18px;
+
+    outline:none;
+
+    padding:0 22px;
+
+    color:white;
+    font-size:18px;
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+    font-family:var(--font-main);
+}
+
+#accessCode::placeholder{
+    color:#8A8686;
+    letter-spacing:3px;
+}
+
+/* BUTTON */
+
+#submitBtn{
+    width:100%;
+    height:64px;
+
+    border:none;
+    border-radius:18px;
+
+    background:#4A4747;
+    color:#7E7A7A;
+
+    font-size:18px;
+    font-weight:700;
+
+    cursor:pointer;
+    transition:0.2s;
+
+    font-family:var(--font-main);
+}
+
+/* ACTIVE BUTTON */
+
+#submitBtn.active{
+    background:var(--accent-color);
+    color:white;
+}
+
+/* ERROR BUTTON */
+
+#submitBtn.error{
+    background:var(--accent-color);
+    color:white;
+}
        
-        /* BOTTOM NAV */
 
         .bottom-nav{
             position:fixed;
@@ -167,7 +288,38 @@
 
     </header>
 
+   
+
+<main class="access-page">
+
+    <div class="access-icon">
+        <img src="./images/Lock.svg" alt="Lock">
+    </div>
+
+    <h1>Access Code</h1>
+
+    <p class="subtitle">
+        Enter your unique company code to view events
+    </p>
+
     
+    <div class="error-box" id="errorBox">
+        An invite code is required to proceed. If you haven't received one, this page may not be relevant to you.
+    </div>
+
+   
+    <input 
+        type="text" 
+        id="accessCode"
+        placeholder="ENTER CODE"
+    >
+
+    
+    <button id="submitBtn">
+        SUBMIT
+    </button>
+
+</main>
 
 
    
@@ -203,4 +355,69 @@
     </a>
 
 </nav>
+  
+<script> 
+
+const input = document.getElementById('accessCode');
+const button = document.getElementById('submitBtn');
+const errorBox = document.getElementById('errorBox');
+
+/* JUISTE CODE */
+
+const validCode = "Studio123";
+
+/* BUTTON ACTIVE ALS INPUT NIET LEEG IS */
+
+input.addEventListener('input', () => {
+
+    if(input.value.trim() !== ""){
+
+        button.classList.add('active');
+
+    }else{
+
+        button.classList.remove('active');
+
+    }
+
+});
+
+/* SUBMIT */
+
+button.addEventListener('click', () => {
+
+    const enteredCode = input.value.trim();
+
+    /* RESET */
+
+    errorBox.classList.remove('show');
+
+    button.classList.remove('error');
+
+    /* CORRECTE CODE */
+
+    if(enteredCode === validCode){
+
+        window.location.href = "event-overview.html";
+
+    }
+
+    /* FOUTE CODE */
+
+    else{
+
+        errorBox.classList.add('show');
+
+        button.classList.add('error');
+
+        button.textContent = "PLEASE TRY AGAIN";
+
+    }
+
+});
+
+
+</script>
+
 </body>
+</html>
