@@ -6,7 +6,8 @@
     <title>Eventregistration</title>
 
     <style>
-:root {
+
+        :root {
             --bg-color: #282626;
             --text-color: #FDFDFD;
             --accent-color: #FE0D00;
@@ -27,8 +28,6 @@
             padding-bottom:120px;
         }
 
-        
-
         .main-header{
             display:flex;
             justify-content:space-between;
@@ -44,16 +43,11 @@
         }
 
         .logo-placeholder{
-            
-            color:white;
             width:60px;
             height:45px;
             display:flex;
             justify-content:center;
             align-items:center;
-            font-weight:bold;
-            font-size:24px;
-            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
         }
 
         .logo-text{
@@ -90,272 +84,215 @@
             background:var(--accent-color);
         }
 
-        
-
-.registration-page{
-    padding-bottom:140px;
-}
-
-
-
-.top-section{
-    padding:20px 24px;
-
-    border-top:1px solid rgba(255,0,0,0.15);
-    border-bottom:1px solid rgba(255,255,255,0.05);
-}
-
-
-
-.back-btn{
-    text-decoration:none;
-
-    display:flex;
-    align-items:center;
-    gap:14px;
-
-    color:white;
-
-    font-size:16px;
-    font-weight:600;
-
-    font-family:var(--font-main);
-
-    width:fit-content;
-}
-
-.back-btn span{
-    width:42px;
-    height:42px;
-    padding-bottom: 2px;
-
-    border-radius:50%;
-
-    background:#3A3838;
-
-    border:1px solid #4E4B4B;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    font-size:22px;
-}
-
-
-
-.title-section{
-    padding:28px 24px;
-
-    border-bottom:1px solid rgba(255,0,0,0.12);
-}
-
-.title-section h1{
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-.title-section p{
-    color:#9A9696;
-    line-height:1.6;
-    max-width:320px;
-}
-
-
-
-.form-section{
-    padding:28px 24px;
-}
-
-.form-group{
-    margin-bottom:28px;
-}
-
-.form-group label{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    margin-bottom:16px;
-
-    font-size:15px;
-    font-weight:600;
-}
-
-.form-group label img{
-    width:18px;
-    height:18px;
-}
-
-
-
-.form-group input{
-    width:100%;
-    height:62px;
-
-    background:#3A3737;
-
-    border:none;
-    border-radius:18px;
-
-    padding:0 20px;
-
-    color:white;
-
-    font-size:15px;
-
-    font-family:var(--font-main);
-
-    outline:none;
-}
-
-.form-group input::placeholder{
-    color:#918D8D;
-}
-
-
-
-.roles-subtitle{
-    color:#9C9898;
-    font-size:14px;
-
-    margin-bottom:18px;
-}
-
-.roles-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-}
-
-
-
-.role-btn{
-    height:54px;
-
-    border:none;
-    border-radius:16px;
-
-    background:#3A3737;
-
-    color:#E2DEDE;
-
-    font-size:14px;
-    font-weight:600;
-
-    font-family:var(--font-main);
-
-    cursor:pointer;
-
-    transition:0.2s;
-}
-
-
-
-.role-btn.active{
-    background:var(--accent-color);
-
-    color:white;
-}
-
-
-
-.bottom-button{
-    padding:0 24px;
-}
-
-#confirmBtn{
-    width:100%;
-    height:64px;
-
-    border:none;
-    border-radius:20px;
-
-    background:#4A4747;
-
-    color:#868181;
-
-    font-size:18px;
-    font-weight:700;
-
-    font-family:var(--font-main);
-
-    transition:0.2s;
-
-    cursor:not-allowed;
-}
-
-
-
-#confirmBtn.active{
-    background:var(--accent-color);
-
-    color:white;
-
-    cursor:pointer;
-}
-
-
+        .registration-page{
+            padding-bottom:140px;
+        }
+
+        .top-section{
+            padding:20px 24px;
+            border-top:1px solid rgba(255,0,0,0.15);
+            border-bottom:1px solid rgba(255,255,255,0.05);
+        }
+
+        .back-btn{
+            text-decoration:none;
+            display:flex;
+            align-items:center;
+            gap:14px;
+            color:white;
+            font-size:16px;
+            font-weight:600;
+            font-family:var(--font-main);
+            width:fit-content;
+        }
+
+        .back-icon{
+            width:42px;
+            height:42px;
+            padding-bottom:2px;
+            border-radius:50%;
+            background:#3A3838;
+            border:1px solid #4E4B4B;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:22px;
+        }
+
+        .title-section{
+            padding:28px 24px;
+            border-bottom:1px solid rgba(255,0,0,0.12);
+        }
+
+        .title-section h1{
+            font-size:22px;
+            margin-bottom:10px;
+        }
+
+        .title-section p{
+            color:#9A9696;
+            line-height:1.6;
+            max-width:320px;
+        }
+
+        .form-section{
+            padding:28px 24px;
+        }
+
+        .form-group{
+            margin-bottom:28px;
+        }
+
+        .form-group label{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            margin-bottom:16px;
+            font-size:15px;
+            font-weight:600;
+        }
+
+        .form-group label img{
+            width:18px;
+            height:18px;
+        }
+
+        .form-group input{
+            width:100%;
+            height:62px;
+            background:#3A3737;
+            border:none;
+            border-radius:18px;
+            padding:0 20px;
+            color:white;
+            font-size:15px;
+            font-family:var(--font-main);
+            outline:none;
+        }
+
+        .form-group input::placeholder{
+            color:#918D8D;
+        }
+
+        .roles-subtitle{
+            color:#9C9898;
+            font-size:14px;
+            margin-bottom:18px;
+        }
+
+        .roles-grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+        }
+
+        .role-btn{
+            height:54px;
+            border:none;
+            border-radius:16px;
+            background:#3A3737;
+            color:#E2DEDE;
+            font-size:14px;
+            font-weight:600;
+            font-family:var(--font-main);
+            cursor:pointer;
+            transition:0.2s;
+        }
+
+        .role-btn.active{
+            background:var(--accent-color);
+            color:white;
+        }
+
+        .bottom-button{
+            padding:0 24px;
+        }
+
+        #confirmBtn{
+            width:100%;
+            height:64px;
+            border:none;
+            border-radius:20px;
+            background:#4A4747;
+            color:#868181;
+            font-size:18px;
+            font-weight:700;
+            font-family:var(--font-main);
+            transition:0.2s;
+            cursor:not-allowed;
+        }
+
+        #confirmBtn.active{
+            background:var(--accent-color);
+            color:white;
+            cursor:pointer;
+        }
 
     </style>
 
 </head>
+
 <body>
     
-    <header class="main-header">
+<header class="main-header">
 
-        <div class="logo-area">
-            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
+    <div class="logo-area">
 
-            <div class="logo-text">
-                <strong>AED STUDIOS</strong>
-                <span>Creative Network</span>
-            </div>
+        <div class="logo-placeholder">
+            <img src="./images/Logo.svg" alt="logo">
         </div>
 
-        <div class="language-toggles">
-            <button class="lang-btn">NL</button>
-            <button class="lang-btn active">EN</button>
-            <button class="lang-btn">FR</button>
+        <div class="logo-text">
+
+            <strong>AED STUDIOS</strong>
+
+            <span>Creative Network</span>
+
         </div>
 
-    </header>
+    </div>
 
-    
+    <div class="language-toggles">
+
+        <button class="lang-btn" id="btn-nl">
+            NL
+        </button>
+
+        <button class="lang-btn active" id="btn-en">
+            EN
+        </button>
+
+        <button class="lang-btn" id="btn-fr">
+            FR
+        </button>
+
+    </div>
+
+</header>
 
 <main class="registration-page">
-
-    
 
     <section class="top-section">
 
         <a href="EventDatum.html" class="back-btn">
 
-            <span>←</span>
+            <div class="back-icon">←</div>
 
-            Go back
+            <span data-translate="goBack"></span>
 
         </a>
 
     </section>
 
-    
-
     <section class="title-section">
 
-        <h1>Event Registration</h1>
+        <h1 data-translate="registrationTitle"></h1>
 
-        <p>
-            Tell us about yourself so we can connect you with the right people
-        </p>
+        <p data-translate="registrationSubtitle"></p>
 
     </section>
 
-    
-
     <section class="form-section">
-
-        <!-- NAME -->
 
         <div class="form-group">
 
@@ -363,19 +300,17 @@
 
                 <img src="./images/Personred.svg">
 
-                Your name
+                <span data-translate="yourName"></span>
 
             </label>
 
             <input 
                 type="text"
                 id="nameInput"
-                placeholder="Enter your full name"
+                data-placeholder="yourNamePlaceholder"
             >
 
         </div>
-
-        
 
         <div class="form-group">
 
@@ -383,19 +318,17 @@
 
                 <img src="./images/Companiered.svg">
 
-                Where do you work?
+                <span data-translate="workPlace"></span>
 
             </label>
 
             <input 
                 type="text"
                 id="companyInput"
-                placeholder="Company name or studio"
+                data-placeholder="workPlacePlaceholder"
             >
 
         </div>
-
-        
 
         <div class="form-group">
 
@@ -403,19 +336,17 @@
 
                 <img src="./images/Companiered.svg">
 
-                For which company on site?
+                <span data-translate="companyOnSite"></span>
 
             </label>
 
             <input 
                 type="text"
                 id="locationInput"
-                placeholder="AED Studio location"
+                data-placeholder="companyOnSitePlaceholder"
             >
 
         </div>
-
-        
 
         <div class="form-group">
 
@@ -423,40 +354,234 @@
 
                 <img src="./images/PeopleRed.svg">
 
-                Who would you like to meet?
+                <span data-translate="meetPeople"></span>
 
             </label>
 
-            <p class="roles-subtitle">
-                Select all roles that interest you
-            </p>
+            <p
+                class="roles-subtitle"
+                data-translate="rolesSubtitle"
+            ></p>
 
-            <div class="roles-grid" id="rolesGrid">
-
-                
-
-            </div>
+            <div class="roles-grid" id="rolesGrid"></div>
 
         </div>
 
     </section>
 
-    
-
     <section class="bottom-button">
 
-        <button id="confirmBtn">
-
-            CONFIRM REGISTRATION
-
-        </button>
+        <button
+            id="confirmBtn"
+            data-translate="confirmBtn"
+        ></button>
 
     </section>
 
 </main>
 
 <script>
-    /* ROLES DATABASE */
+
+const translations = {
+
+    en: {
+
+        goBack:
+            "Go back",
+
+        registrationTitle:
+            "Event Registration",
+
+        registrationSubtitle:
+            "Tell us about yourself so we can connect you with the right people",
+
+        yourName:
+            "Your name",
+
+        yourNamePlaceholder:
+            "Enter your full name",
+
+        workPlace:
+            "Where do you work?",
+
+        workPlacePlaceholder:
+            "Company name or studio",
+
+        companyOnSite:
+            "For which company on site?",
+
+        companyOnSitePlaceholder:
+            "AED Studio location",
+
+        meetPeople:
+            "Who would you like to meet?",
+
+        rolesSubtitle:
+            "Select all roles that interest you",
+
+        confirmBtn:
+            "CONFIRM REGISTRATION"
+
+    },
+
+    nl: {
+
+        goBack:
+            "Ga terug",
+
+        registrationTitle:
+            "Event Registratie",
+
+        registrationSubtitle:
+            "Vertel ons meer over jezelf zodat we je met de juiste mensen kunnen verbinden",
+
+        yourName:
+            "Jouw naam",
+
+        yourNamePlaceholder:
+            "Voer je volledige naam in",
+
+        workPlace:
+            "Waar werk je?",
+
+        workPlacePlaceholder:
+            "Bedrijfsnaam of studio",
+
+        companyOnSite:
+            "Voor welk bedrijf op locatie?",
+
+        companyOnSitePlaceholder:
+            "AED Studio locatie",
+
+        meetPeople:
+            "Wie zou je graag ontmoeten?",
+
+        rolesSubtitle:
+            "Selecteer alle rollen die je interesseren",
+
+        confirmBtn:
+            "BEVESTIG REGISTRATIE"
+
+    },
+
+    fr: {
+
+        goBack:
+            "Retour",
+
+        registrationTitle:
+            "Inscription à l'événement",
+
+        registrationSubtitle:
+            "Parlez-nous de vous afin que nous puissions vous connecter aux bonnes personnes",
+
+        yourName:
+            "Votre nom",
+
+        yourNamePlaceholder:
+            "Entrez votre nom complet",
+
+        workPlace:
+            "Où travaillez-vous ?",
+
+        workPlacePlaceholder:
+            "Nom de l'entreprise ou studio",
+
+        companyOnSite:
+            "Pour quelle entreprise sur site ?",
+
+        companyOnSitePlaceholder:
+            "Localisation AED Studio",
+
+        meetPeople:
+            "Qui aimeriez-vous rencontrer ?",
+
+        rolesSubtitle:
+            "Sélectionnez tous les rôles qui vous intéressent",
+
+        confirmBtn:
+            "CONFIRMER L'INSCRIPTION"
+
+    }
+
+};
+
+function setLanguage(language){
+
+    localStorage.setItem(
+        "language",
+        language
+    );
+
+    document
+    .querySelectorAll(".lang-btn")
+    .forEach(btn => {
+
+        btn.classList.remove("active");
+
+    });
+
+    document
+    .getElementById(`btn-${language}`)
+    .classList.add("active");
+
+    document
+    .querySelectorAll("[data-translate]")
+    .forEach(element => {
+
+        const key =
+            element.dataset.translate;
+
+        element.textContent =
+            translations[language][key];
+
+    });
+
+    document
+    .querySelectorAll("[data-placeholder]")
+    .forEach(element => {
+
+        const key =
+            element.dataset.placeholder;
+
+        element.placeholder =
+            translations[language][key];
+
+    });
+
+}
+
+document
+.getElementById("btn-nl")
+.addEventListener("click", () => {
+
+    setLanguage("nl");
+
+});
+
+document
+.getElementById("btn-en")
+.addEventListener("click", () => {
+
+    setLanguage("en");
+
+});
+
+document
+.getElementById("btn-fr")
+.addEventListener("click", () => {
+
+    setLanguage("fr");
+
+});
+
+const savedLanguage =
+
+    localStorage.getItem("language")
+
+    || "en";
+
+setLanguage(savedLanguage);
 
 const roles = [
 
@@ -475,8 +600,6 @@ const roles = [
 
 ];
 
-/* ELEMENTS */
-
 const rolesGrid =
     document.getElementById("rolesGrid");
 
@@ -492,11 +615,7 @@ const companyInput =
 const locationInput =
     document.getElementById("locationInput");
 
-/* SELECTED ROLES */
-
 let selectedRoles = [];
-
-/* BUILD ROLES */
 
 roles.forEach(role => {
 
@@ -512,8 +631,6 @@ roles.forEach(role => {
 
 });
 
-/* ROLE SELECTION */
-
 const roleButtons =
     document.querySelectorAll(".role-btn");
 
@@ -524,11 +641,7 @@ roleButtons.forEach(button => {
         const role =
             button.textContent.trim();
 
-        /* TOGGLE ACTIVE */
-
         button.classList.toggle("active");
-
-        /* ADD */
 
         if(selectedRoles.includes(role)){
 
@@ -538,8 +651,6 @@ roleButtons.forEach(button => {
                 );
 
         }
-
-        /* REMOVE */
 
         else{
 
@@ -552,8 +663,6 @@ roleButtons.forEach(button => {
     });
 
 });
-
-/* VALIDATION */
 
 function validateForm(){
 
@@ -569,8 +678,6 @@ function validateForm(){
     const hasRoles =
         selectedRoles.length > 0;
 
-    /* VALID */
-
     if(
         hasName &&
         hasCompany &&
@@ -582,8 +689,6 @@ function validateForm(){
 
     }
 
-    /* INVALID */
-
     else{
 
         confirmBtn.classList.remove("active");
@@ -591,8 +696,6 @@ function validateForm(){
     }
 
 }
-
-/* INPUT LISTENERS */
 
 nameInput.addEventListener(
     "input",
@@ -609,8 +712,6 @@ locationInput.addEventListener(
     validateForm
 );
 
-/* SUBMIT */
-
 confirmBtn.addEventListener("click", () => {
 
     if(
@@ -618,8 +719,6 @@ confirmBtn.addEventListener("click", () => {
             "active"
         )
     ) return;
-
-    /* DATABASE READY */
 
     const registrationData = {
 
@@ -644,19 +743,17 @@ confirmBtn.addEventListener("click", () => {
 
     console.log(registrationData);
 
-    /* LATER DATABASE */
-
     localStorage.setItem(
         "eventRegistration",
         JSON.stringify(registrationData)
     );
 
-    /* NEXT PAGE */
-
     window.location.href =
         "confirmation.html";
 
 });
+
 </script>
+
 </body>
 </html>
