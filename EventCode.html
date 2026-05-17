@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>AED Studios - Home</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -31,8 +30,6 @@
             padding-bottom:120px;
         }
 
-        /* HEADER */
-
         .main-header{
             display:flex;
             justify-content:space-between;
@@ -48,16 +45,11 @@
         }
 
         .logo-placeholder{
-            
-            color:white;
             width:60px;
             height:45px;
             display:flex;
             justify-content:center;
             align-items:center;
-            font-weight:bold;
-            font-size:24px;
-            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
         }
 
         .logo-text{
@@ -94,135 +86,109 @@
             background:var(--accent-color);
         }
 
-        /* ACCESS PAGE */
+        .access-page{
+            padding:50px 32px;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
 
-.access-page{
-    padding:50px 32px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
+        .access-icon{
+            width:82px;
+            height:82px;
+            border-radius:24px;
+            background:var(--accent-color);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-bottom:32px;
+        }
 
-.access-icon{
-    width:82px;
-    height:82px;
-    border-radius:24px;
-    background:var(--accent-color);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:32px;
-}
+        .access-icon img{
+            width:30px;
+            height:30px;
+        }
 
-.access-icon img{
-    width:30px;
-    height:30px;
-}
+        .access-page h1{
+            font-size:24px;
+            margin-bottom:16px;
+            font-weight:700;
+        }
 
-.access-page h1{
-    font-size:24px;
-    margin-bottom:16px;
-    font-weight:700;
-}
+        .subtitle{
+            text-align:center;
+            color:#A0A0A0;
+            font-size:14px;
+            line-height:1.7;
+            max-width:280px;
+            margin-bottom:28px;
+        }
 
-.subtitle{
-    text-align:center;
-    color:#A0A0A0;
-    font-size:14px;
-    line-height:1.7;
-    max-width:280px;
-    margin-bottom:28px;
-}
+        .error-box{
+            width:100%;
+            border:2px solid var(--accent-color);
+            border-radius:18px;
+            padding:18px;
+            color:#B8AFAF;
+            font-size:14px;
+            line-height:1.7;
+            margin-bottom:20px;
+            display:none;
+        }
 
-/* ERROR */
+        .error-box.show{
+            display:block;
+        }
 
-.error-box{
-    width:100%;
-    border:2px solid var(--accent-color);
-    border-radius:18px;
-    padding:18px;
-    color:#B8AFAF;
-    font-size:14px;
-    line-height:1.7;
-    margin-bottom:20px;
+        #accessCode{
+            width:100%;
+            height:64px;
+            background:#343232;
+            border:2px solid #4A4747;
+            border-radius:18px;
+            outline:none;
+            padding:0 22px;
+            color:white;
+            font-size:18px;
+            letter-spacing:3px;
+            margin-bottom:20px;
+            font-family:var(--font-main);
+        }
 
-    display:none;
-}
+        #accessCode::placeholder{
+            color:#8A8686;
+            letter-spacing:3px;
+        }
 
-.error-box.show{
-    display:block;
-}
+        #submitBtn{
+            width:100%;
+            height:64px;
+            border:none;
+            border-radius:18px;
+            background:#4A4747;
+            color:#7E7A7A;
+            font-size:18px;
+            font-weight:700;
+            cursor:pointer;
+            transition:0.2s;
+            font-family:var(--font-main);
+        }
 
-/* INPUT */
+        #submitBtn.active{
+            background:var(--accent-color);
+            color:white;
+        }
 
-#accessCode{
-    width:100%;
-    height:64px;
-
-    background:#343232;
-
-    border:2px solid #4A4747;
-    border-radius:18px;
-
-    outline:none;
-
-    padding:0 22px;
-
-    color:white;
-    font-size:18px;
-    letter-spacing:3px;
-
-    margin-bottom:20px;
-
-    font-family:var(--font-main);
-}
-
-#accessCode::placeholder{
-    color:#8A8686;
-    letter-spacing:3px;
-}
-
-/* BUTTON */
-
-#submitBtn{
-    width:100%;
-    height:64px;
-
-    border:none;
-    border-radius:18px;
-
-    background:#4A4747;
-    color:#7E7A7A;
-
-    font-size:18px;
-    font-weight:700;
-
-    cursor:pointer;
-    transition:0.2s;
-
-    font-family:var(--font-main);
-}
-
-/* ACTIVE BUTTON */
-
-#submitBtn.active{
-    background:var(--accent-color);
-    color:white;
-}
-
-/* ERROR BUTTON */
-
-#submitBtn.error{
-    background:var(--accent-color);
-    color:white;
-}
-       
+        #submitBtn.error{
+            background:var(--accent-color);
+            color:white;
+        }
 
         .bottom-nav{
             position:fixed;
-            bottom:0px;
-            left:0px;
-            right:0px;
+            bottom:0;
+            left:0;
+            right:0;
             background:#2f2d2d;
             padding:18px 10px;
             display:flex;
@@ -231,16 +197,16 @@
             border-top:1px solid #4a4a4a;
         }
 
-       .nav-item{
-    text-decoration:none;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-    color:#8e8e8e;
-    font-size:13px;
-    cursor:pointer;
-}
+        .nav-item{
+            text-decoration:none;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:8px;
+            color:#8e8e8e;
+            font-size:13px;
+            cursor:pointer;
+        }
 
         .nav-icon{
             width:56px;
@@ -254,13 +220,10 @@
             font-size:22px;
         }
 
-      
-
         .nav-item.active .nav-icon{
             background:var(--accent-color);
             color:white;
             border:none;
-            
         }
 
     </style>
@@ -268,165 +231,411 @@
 
 <body>
 
-  
+<header class="main-header">
 
-    <header class="main-header">
+    <div class="logo-area">
 
-        <div class="logo-area">
-            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
-
-            <div class="logo-text">
-                <strong>AED STUDIOS</strong>
-                <span>Creative Network</span>
-            </div>
+        <div class="logo-placeholder">
+            <img src="./images/Logo.svg" alt="logo">
         </div>
 
-        <div class="language-toggles">
-            <button class="lang-btn">NL</button>
-            <button class="lang-btn active">EN</button>
-            <button class="lang-btn">FR</button>
+        <div class="logo-text">
+
+            <strong>AED STUDIOS</strong>
+
+            <span>Creative Network</span>
+
         </div>
 
-    </header>
+    </div>
 
-   
+    <div class="language-toggles">
+
+        <button class="lang-btn" id="btn-nl">
+            NL
+        </button>
+
+        <button class="lang-btn active" id="btn-en">
+            EN
+        </button>
+
+        <button class="lang-btn" id="btn-fr">
+            FR
+        </button>
+
+    </div>
+
+</header>
 
 <main class="access-page">
 
     <div class="access-icon">
+
         <img src="./images/Lock.svg" alt="Lock">
+
     </div>
 
-    <h1>Access Code</h1>
+    <h1 data-translate="accessTitle"></h1>
 
-    <p class="subtitle">
-        Enter your unique company code to view events
-    </p>
+    <p
+        class="subtitle"
+        data-translate="accessSubtitle"
+    ></p>
 
-    
-    <div class="error-box" id="errorBox">
-        An invite code is required to proceed. If you haven't received one, this page may not be relevant to you.
-    </div>
+    <div
+        class="error-box"
+        id="errorBox"
+        data-translate="errorMessage"
+    ></div>
 
-   
     <input 
         type="text" 
         id="accessCode"
-        placeholder="ENTER CODE"
+        data-placeholder="accessPlaceholder"
     >
 
-    
-    <button id="submitBtn">
-        SUBMIT
-    </button>
+    <button
+        id="submitBtn"
+        data-translate="submitBtn"
+    ></button>
 
 </main>
 
+<nav class="bottom-nav">
 
-   
+    <a href="index.html" class="nav-item">
 
-   <nav class="bottom-nav">
-
-    <a href="index.html" class="nav-item ">
         <div class="nav-icon">
-            <img src="./images/HomeIcon.svg" alt="Home">
+
+            <img
+                src="./images/HomeIcon.svg"
+                alt="Home"
+            >
+
         </div>
-        <span>Home</span>
+
+        <span data-translate="navHome"></span>
+
     </a>
 
     <a href="map.html" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/MapIcontrans.svg" alt="Map">
+
+            <img
+                src="./images/MapIcontrans.svg"
+                alt="Map"
+            >
+
         </div>
-        <span>Map</span>
+
+        <span data-translate="navMap"></span>
+
     </a>
 
     <a href="overview.html" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/StudioIcontrans.svg" alt="Studio's">
+
+            <img
+                src="./images/StudioIcontrans.svg"
+                alt="Studio's"
+            >
+
         </div>
-        <span>Studio's</span>
+
+        <span data-translate="navStudios"></span>
+
     </a>
 
-    <a href="EventCode.html" class="nav-item active">
+    <a
+        href="EventCode.html"
+        class="nav-item active"
+    >
+
         <div class="nav-icon">
-            <img src="./images/EventIconfull.svg" alt="Event">
+
+            <img
+                src="./images/EventIconfull.svg"
+                alt="Event"
+            >
+
         </div>
-        <span>Event</span>
+
+        <span data-translate="navEvent"></span>
+
     </a>
 
 </nav>
-  
-<script> 
 
+<script>
 
-    const input = document.getElementById('accessCode');
-    const button = document.getElementById('submitBtn');
-    const errorBox = document.getElementById('errorBox');
+    const translations = {
 
-    /* JUISTE CODE */
+        en: {
 
-    const validCode = "Studio123";
+            accessTitle:
+                "Access Code",
 
-    /* BUTTON ACTIVE */
+            accessSubtitle:
+                "Enter your unique company code to view events",
 
-    input.addEventListener('input', () => {
+            accessPlaceholder:
+                "ENTER CODE",
 
-        if(input.value.trim() !== ""){
+            submitBtn:
+                "SUBMIT",
 
-            button.classList.add('active');
+            errorMessage:
+                "An invite code is required to proceed. If you haven't received one, this page may not be relevant to you.",
 
-        }else{
+            navHome:
+                "Home",
 
-            button.classList.remove('active');
+            navMap:
+                "Map",
+
+            navStudios:
+                "Studios",
+
+            navEvent:
+                "Event"
+
+        },
+
+        nl: {
+
+            accessTitle:
+                "Toegangscode",
+
+            accessSubtitle:
+                "Voer je unieke bedrijfscode in om evenementen te bekijken",
+
+            accessPlaceholder:
+                "VOER CODE IN",
+
+            submitBtn:
+                "VERZENDEN",
+
+            errorMessage:
+                "Een uitnodigingscode is vereist om verder te gaan. Als je er geen hebt ontvangen, is deze pagina mogelijk niet relevant voor jou.",
+
+            navHome:
+                "Home",
+
+            navMap:
+                "Kaart",
+
+            navStudios:
+                "Studio's",
+
+            navEvent:
+                "Event"
+
+        },
+
+        fr: {
+
+            accessTitle:
+                "Code d'accès",
+
+            accessSubtitle:
+                "Entrez votre code d'entreprise unique pour voir les événements",
+
+            accessPlaceholder:
+                "ENTREZ LE CODE",
+
+            submitBtn:
+                "ENVOYER",
+
+            errorMessage:
+                "Un code d'invitation est requis pour continuer. Si vous n'en avez pas reçu, cette page peut ne pas vous concerner.",
+
+            navHome:
+                "Accueil",
+
+            navMap:
+                "Carte",
+
+            navStudios:
+                "Studios",
+
+            navEvent:
+                "Événement"
 
         }
+
+    };
+
+    function setLanguage(language){
+
+        localStorage.setItem(
+            "language",
+            language
+        );
+
+        document
+        .querySelectorAll(".lang-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        document
+        .getElementById(`btn-${language}`)
+        .classList.add("active");
+
+        document
+        .querySelectorAll("[data-translate]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.translate;
+
+            element.textContent =
+                translations[language][key];
+
+        });
+
+        document
+        .querySelectorAll("[data-placeholder]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.placeholder;
+
+            element.placeholder =
+                translations[language][key];
+
+        });
+
+    }
+
+    document
+    .getElementById("btn-nl")
+    .addEventListener("click", () => {
+
+        setLanguage("nl");
 
     });
 
-    /* SUBMIT */
+    document
+    .getElementById("btn-en")
+    .addEventListener("click", () => {
 
-    button.addEventListener('click', () => {
-
-        const enteredCode = input.value.trim();
-
-        /* RESET */
-
-        errorBox.classList.remove('show');
-
-        button.classList.remove('error');
-
-        button.textContent = "SUBMIT";
-
-        /* CORRECTE CODE */
-
-        if(enteredCode === validCode){
-
-            /* TOEGANG OPSLAAN */
-
-            sessionStorage.setItem("eventAccess", "granted");
-
-            /* REDIRECT */
-
-            window.location.href = "event-overview.html";
-
-        }
-
-        /* FOUTE CODE */
-
-        else{
-
-            errorBox.classList.add('show');
-
-            button.classList.add('error');
-
-            button.textContent = "PLEASE TRY AGAIN";
-
-        }
+        setLanguage("en");
 
     });
 
+    document
+    .getElementById("btn-fr")
+    .addEventListener("click", () => {
 
+        setLanguage("fr");
+
+    });
+
+    const savedLanguage =
+
+        localStorage.getItem("language")
+
+        || "en";
+
+    setLanguage(savedLanguage);
+
+    const input =
+        document.getElementById(
+            'accessCode'
+        );
+
+    const button =
+        document.getElementById(
+            'submitBtn'
+        );
+
+    const errorBox =
+        document.getElementById(
+            'errorBox'
+        );
+
+    const validCode =
+        "Studio123";
+
+    input.addEventListener(
+        'input',
+        () => {
+
+            if(input.value.trim() !== ""){
+
+                button.classList.add(
+                    'active'
+                );
+
+            }
+
+            else{
+
+                button.classList.remove(
+                    'active'
+                );
+
+            }
+
+        }
+    );
+
+    button.addEventListener(
+        'click',
+        () => {
+
+            const enteredCode =
+                input.value.trim();
+
+            errorBox.classList.remove(
+                'show'
+            );
+
+            button.classList.remove(
+                'error'
+            );
+
+            button.textContent =
+                translations[
+                    savedLanguage
+                ].submitBtn;
+
+            if(
+                enteredCode === validCode
+            ){
+
+                sessionStorage.setItem(
+                    "eventAccess",
+                    "granted"
+                );
+
+                window.location.href =
+                    "event-overview.html";
+
+            }
+
+            else{
+
+                errorBox.classList.add(
+                    'show'
+                );
+
+                button.classList.add(
+                    'error'
+                );
+
+                button.textContent =
+                    "PLEASE TRY AGAIN";
+
+            }
+
+        }
+    );
 
 </script>
 
