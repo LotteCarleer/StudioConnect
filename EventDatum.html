@@ -437,8 +437,9 @@ const eventDates = [
         date: "June 15, 2026",
         time: "18:00 - 22:00",
         location: "Studio 1",
-        spots: 45,
-        progress: 25
+
+        maxSpots: 60,
+        registrations: 0
     },
 
     {
@@ -446,8 +447,9 @@ const eventDates = [
         date: "September 22, 2026",
         time: "18:00 - 22:00",
         location: "Studio 1",
-        spots: 38,
-        progress: 24
+
+        maxSpots: 60,
+        registrations: 0
     },
 
     {
@@ -455,8 +457,9 @@ const eventDates = [
         date: "December 20, 2026",
         time: "18:00 - 22:00",
         location: "Studio 1",
-        spots: 52,
-        progress: 30
+
+        maxSpots: 60,
+        registrations: 0
     },
 
     {
@@ -464,8 +467,9 @@ const eventDates = [
         date: "March 19, 2027",
         time: "18:00 - 22:00",
         location: "Studio 1",
-        spots: 28,
-        progress: 20
+
+        maxSpots: 60,
+        registrations: 0
     }
 
 ];
@@ -480,6 +484,16 @@ const continueBtn = document.getElementById("continueBtn");
 /* BUILD CARDS */
 
 eventDates.forEach(event => {
+
+    /* AUTO CALCULATIONS */
+
+    const availableSpots =
+        event.maxSpots - event.registrations;
+
+    const progress =
+        (event.registrations / event.maxSpots) * 100;
+
+    /* CARD */
 
     datesList.innerHTML += `
 
@@ -525,7 +539,9 @@ eventDates.forEach(event => {
 
                 <img src="./images/PeopleRed.svg">
 
-                <span>${event.spots} spots available</span>
+                <span>
+                    ${availableSpots} spots available
+                </span>
 
             </div>
 
@@ -533,7 +549,7 @@ eventDates.forEach(event => {
 
                 <div 
                     class="progress-fill"
-                    style="width:${event.progress}%"
+                    style="width:${progress}%"
                 ></div>
 
             </div>
@@ -552,15 +568,17 @@ cards.forEach(card => {
 
     card.addEventListener("click", () => {
 
-        /* REMOVE ALL ACTIVE */
+        /* REMOVE ACTIVE */
 
-        cards.forEach(c => c.classList.remove("active"));
+        cards.forEach(c => 
+            c.classList.remove("active")
+        );
 
         /* ACTIVE CARD */
 
         card.classList.add("active");
 
-        /* SAVE SELECTED */
+        /* SAVE DATE */
 
         selectedDate = card.dataset.id;
 
@@ -578,7 +596,7 @@ continueBtn.addEventListener("click", () => {
 
     if(!selectedDate) return;
 
-    /* LATER DATABASE */
+    /* SAVE FOR NEXT PAGE */
 
     localStorage.setItem(
         "selectedEventDate",
@@ -587,10 +605,10 @@ continueBtn.addEventListener("click", () => {
 
     /* NEXT PAGE */
 
-    window.location.href = "registration.html";
+    window.location.href =
+        "registration.html";
 
 });
-
 </script>
 
 
