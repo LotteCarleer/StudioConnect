@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventregistration</title>
+
+    <style>
+:root {
+            --bg-color: #282626;
+            --text-color: #FDFDFD;
+            --accent-color: #FE0D00;
+            --card-bg: #333131;
+            --font-main: 'Rubik', sans-serif;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            padding-bottom:120px;
+        }
+
+        
+
+        .main-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px;
+            border-bottom:1px solid #fe0d005a;
+        }
+
+        .logo-area{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .logo-placeholder{
+            
+            color:white;
+            width:60px;
+            height:45px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-weight:bold;
+            font-size:24px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+
+        .logo-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .logo-text strong{
+            font-size:16px;
+        }
+
+        .logo-text span{
+            color:#888;
+            font-size:12px;
+        }
+
+        .language-toggles{
+            display:flex;
+            gap:8px;
+        }
+
+        .lang-btn{
+            background:#444;
+            color:white;
+            border:none;
+            padding:8px 14px;
+            border-radius:8px;
+            font-family:var(--font-main);
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .lang-btn.active{
+            background:var(--accent-color);
+        }
+
+        
+
+.registration-page{
+    padding-bottom:140px;
+}
+
+
+
+.top-section{
+    padding:20px 24px;
+
+    border-top:1px solid rgba(255,0,0,0.15);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+
+
+.back-btn{
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    font-family:var(--font-main);
+
+    width:fit-content;
+}
+
+.back-btn span{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#3A3838;
+
+    border:1px solid #4E4B4B;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+}
+
+
+
+.title-section{
+    padding:28px 24px;
+
+    border-bottom:1px solid rgba(255,0,0,0.12);
+}
+
+.title-section h1{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.title-section p{
+    color:#9A9696;
+    line-height:1.6;
+    max-width:320px;
+}
+
+
+
+.form-section{
+    padding:28px 24px;
+}
+
+.form-group{
+    margin-bottom:28px;
+}
+
+.form-group label{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:16px;
+
+    font-size:15px;
+    font-weight:600;
+}
+
+.form-group label img{
+    width:18px;
+    height:18px;
+}
+
+
+
+.form-group input{
+    width:100%;
+    height:62px;
+
+    background:#3A3737;
+
+    border:none;
+    border-radius:18px;
+
+    padding:0 20px;
+
+    color:white;
+
+    font-size:15px;
+
+    font-family:var(--font-main);
+
+    outline:none;
+}
+
+.form-group input::placeholder{
+    color:#918D8D;
+}
+
+
+
+.roles-subtitle{
+    color:#9C9898;
+    font-size:14px;
+
+    margin-bottom:18px;
+}
+
+.roles-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+
+
+.role-btn{
+    height:54px;
+
+    border:none;
+    border-radius:16px;
+
+    background:#3A3737;
+
+    color:#E2DEDE;
+
+    font-size:14px;
+    font-weight:600;
+
+    font-family:var(--font-main);
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+
+
+.role-btn.active{
+    background:var(--accent-color);
+
+    color:white;
+}
+
+
+
+.bottom-button{
+    padding:0 24px;
+}
+
+#confirmBtn{
+    width:100%;
+    height:64px;
+
+    border:none;
+    border-radius:20px;
+
+    background:#4A4747;
+
+    color:#868181;
+
+    font-size:18px;
+    font-weight:700;
+
+    font-family:var(--font-main);
+
+    transition:0.2s;
+
+    cursor:not-allowed;
+}
+
+
+
+#confirmBtn.active{
+    background:var(--accent-color);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    
+    <header class="main-header">
+
+        <div class="logo-area">
+            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
+
+            <div class="logo-text">
+                <strong>AED STUDIOS</strong>
+                <span>Creative Network</span>
+            </div>
+        </div>
+
+        <div class="language-toggles">
+            <button class="lang-btn">NL</button>
+            <button class="lang-btn active">EN</button>
+            <button class="lang-btn">FR</button>
+        </div>
+
+    </header>
+
+    
+
+<main class="registration-page">
+
+    
+
+    <section class="top-section">
+
+        <a href="EventDatum.html" class="back-btn">
+
+            <span>←</span>
+
+            Go back
+
+        </a>
+
+    </section>
+
+    
+
+    <section class="title-section">
+
+        <h1>Event Registration</h1>
+
+        <p>
+            Tell us about yourself so we can connect you with the right people
+        </p>
+
+    </section>
+
+    
+
+    <section class="form-section">
+
+        <!-- NAME -->
+
+        <div class="form-group">
+
+            <label>
+
+                <img src="./images/UserRed.svg">
+
+                Your name
+
+            </label>
+
+            <input 
+                type="text"
+                id="nameInput"
+                placeholder="Enter your full name"
+            >
+
+        </div>
+
+        
+
+        <div class="form-group">
+
+            <label>
+
+                <img src="./images/BuildingRed.svg">
+
+                Where do you work?
+
+            </label>
+
+            <input 
+                type="text"
+                id="companyInput"
+                placeholder="Company name or studio"
+            >
+
+        </div>
+
+        
+
+        <div class="form-group">
+
+            <label>
+
+                <img src="./images/OfficeRed.svg">
+
+                For which company on site?
+
+            </label>
+
+            <input 
+                type="text"
+                id="locationInput"
+                placeholder="AED Studio location"
+            >
+
+        </div>
+
+        
+
+        <div class="form-group">
+
+            <label>
+
+                <img src="./images/PeopleRed.svg">
+
+                Who would you like to meet?
+
+            </label>
+
+            <p class="roles-subtitle">
+                Select all roles that interest you
+            </p>
+
+            <div class="roles-grid" id="rolesGrid">
+
+                
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+
+    <section class="bottom-button">
+
+        <button id="confirmBtn">
+
+            CONFIRM REGISTRATION
+
+        </button>
+
+    </section>
+
+</main>
+
+<script>
+    /* ROLES DATABASE */
+
+const roles = [
+
+    "Producer",
+    "Developer",
+    "Designer",
+    "Sound Engineer",
+    "Animator",
+    "Director",
+    "Project Manager",
+    "Marketing Specialist",
+    "Content Creator",
+    "Photographer",
+    "Video Editor",
+    "Copywriter"
+
+];
+
+/* ELEMENTS */
+
+const rolesGrid =
+    document.getElementById("rolesGrid");
+
+const confirmBtn =
+    document.getElementById("confirmBtn");
+
+const nameInput =
+    document.getElementById("nameInput");
+
+const companyInput =
+    document.getElementById("companyInput");
+
+const locationInput =
+    document.getElementById("locationInput");
+
+/* SELECTED ROLES */
+
+let selectedRoles = [];
+
+/* BUILD ROLES */
+
+roles.forEach(role => {
+
+    rolesGrid.innerHTML += `
+
+        <button class="role-btn">
+
+            ${role}
+
+        </button>
+
+    `;
+
+});
+
+/* ROLE SELECTION */
+
+const roleButtons =
+    document.querySelectorAll(".role-btn");
+
+roleButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const role =
+            button.textContent.trim();
+
+        /* TOGGLE ACTIVE */
+
+        button.classList.toggle("active");
+
+        /* ADD */
+
+        if(selectedRoles.includes(role)){
+
+            selectedRoles =
+                selectedRoles.filter(
+                    item => item !== role
+                );
+
+        }
+
+        /* REMOVE */
+
+        else{
+
+            selectedRoles.push(role);
+
+        }
+
+        validateForm();
+
+    });
+
+});
+
+/* VALIDATION */
+
+function validateForm(){
+
+    const hasName =
+        nameInput.value.trim() !== "";
+
+    const hasCompany =
+        companyInput.value.trim() !== "";
+
+    const hasLocation =
+        locationInput.value.trim() !== "";
+
+    const hasRoles =
+        selectedRoles.length > 0;
+
+    /* VALID */
+
+    if(
+        hasName &&
+        hasCompany &&
+        hasLocation &&
+        hasRoles
+    ){
+
+        confirmBtn.classList.add("active");
+
+    }
+
+    /* INVALID */
+
+    else{
+
+        confirmBtn.classList.remove("active");
+
+    }
+
+}
+
+/* INPUT LISTENERS */
+
+nameInput.addEventListener(
+    "input",
+    validateForm
+);
+
+companyInput.addEventListener(
+    "input",
+    validateForm
+);
+
+locationInput.addEventListener(
+    "input",
+    validateForm
+);
+
+/* SUBMIT */
+
+confirmBtn.addEventListener("click", () => {
+
+    if(
+        !confirmBtn.classList.contains(
+            "active"
+        )
+    ) return;
+
+    /* DATABASE READY */
+
+    const registrationData = {
+
+        selectedDate:
+            localStorage.getItem(
+                "selectedEventDate"
+            ),
+
+        name:
+            nameInput.value,
+
+        company:
+            companyInput.value,
+
+        location:
+            locationInput.value,
+
+        roles:
+            selectedRoles
+
+    };
+
+    console.log(registrationData);
+
+    /* LATER DATABASE */
+
+    localStorage.setItem(
+        "eventRegistration",
+        JSON.stringify(registrationData)
+    );
+
+    /* NEXT PAGE */
+
+    window.location.href =
+        "confirmation.html";
+
+});
+</script>
+</body>
+</html>
