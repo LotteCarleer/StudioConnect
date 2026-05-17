@@ -106,9 +106,10 @@
     border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
+/* BACK BUTTON */
+
 .back-btn{
-    background:none;
-    border:none;
+    text-decoration:none;
 
     display:flex;
     align-items:center;
@@ -122,12 +123,14 @@
     font-family:var(--font-main);
 
     cursor:pointer;
+
+    width:fit-content;
 }
 
 .back-btn span{
     width:42px;
     height:42px;
-    padding-bottom: 2px;
+
     border-radius:50%;
 
     background:#3A3838;
@@ -139,6 +142,23 @@
     align-items:center;
 
     font-size:22px;
+
+    padding-bottom:2px;
+
+    transition:0.2s;
+}
+
+/* HOVER */
+
+.back-btn:hover span{
+    background:#4A4747;
+    border-color:#666;
+}
+
+/* ACTIVE */
+
+.back-btn:active span{
+    transform:scale(0.96);
 }
 
 
@@ -362,15 +382,15 @@
 
     <section class="top-section">
 
-        <button class="back-btn">
+    <a href="event-overview.html" class="back-btn">
 
-            <span>←</span>
+        <span>←</span>
 
-            Go back
+        Go back
 
-        </button>
+    </a>
 
-    </section>
+</section>
 
     <!-- TITLE -->
 
@@ -406,5 +426,173 @@
 
 </main>
     
+ <script>
+
+/* DATABASE READY STRUCTURE */
+
+const eventDates = [
+
+    {
+        id: 1,
+        date: "April 15, 2026",
+        time: "18:00 - 22:00",
+        location: "Studio Alpha - Brussels",
+        spots: 45,
+        progress: 25
+    },
+
+    {
+        id: 2,
+        date: "April 22, 2026",
+        time: "18:00 - 22:00",
+        location: "Creative Hub - Antwerp",
+        spots: 38,
+        progress: 24
+    },
+
+    {
+        id: 3,
+        date: "April 29, 2026",
+        time: "18:00 - 22:00",
+        location: "Digital Space - Ghent",
+        spots: 52,
+        progress: 30
+    },
+
+    {
+        id: 4,
+        date: "May 6, 2026",
+        time: "18:00 - 22:00",
+        location: "Sound Lab - Brussels",
+        spots: 28,
+        progress: 20
+    }
+
+];
+
+/* SELECTED DATE */
+
+let selectedDate = null;
+
+const datesList = document.getElementById("datesList");
+const continueBtn = document.getElementById("continueBtn");
+
+/* BUILD CARDS */
+
+eventDates.forEach(event => {
+
+    datesList.innerHTML += `
+
+        <div class="date-card" data-id="${event.id}">
+
+            <div class="date-row">
+
+                <div class="date-icon">
+                    <img src="./images/EventRed.svg">
+                </div>
+
+                <div class="date-title">
+                    ${event.date}
+                </div>
+
+            </div>
+
+            <div class="date-row">
+
+                <div class="date-icon">
+                    <img src="./images/ClockRed.svg">
+                </div>
+
+                <div class="date-info">
+                    ${event.time}
+                </div>
+
+            </div>
+
+            <div class="date-row">
+
+                <div class="date-icon">
+                    <img src="./images/LocationRed.svg">
+                </div>
+
+                <div class="date-info">
+                    ${event.location}
+                </div>
+
+            </div>
+
+            <div class="spots">
+
+                <img src="./images/PeopleRed.svg">
+
+                <span>${event.spots} spots available</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div 
+                    class="progress-fill"
+                    style="width:${event.progress}%"
+                ></div>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+/* SELECT ONLY ONE DATE */
+
+const cards = document.querySelectorAll(".date-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        /* REMOVE ALL ACTIVE */
+
+        cards.forEach(c => c.classList.remove("active"));
+
+        /* ACTIVE CARD */
+
+        card.classList.add("active");
+
+        /* SAVE SELECTED */
+
+        selectedDate = card.dataset.id;
+
+        /* ACTIVATE BUTTON */
+
+        continueBtn.classList.add("active");
+
+    });
+
+});
+
+/* CONTINUE */
+
+continueBtn.addEventListener("click", () => {
+
+    if(!selectedDate) return;
+
+    /* LATER DATABASE */
+
+    localStorage.setItem(
+        "selectedEventDate",
+        selectedDate
+    );
+
+    /* NEXT PAGE */
+
+    window.location.href = "registration.html";
+
+});
+
+</script>
+
+
 </body>
 </html>
