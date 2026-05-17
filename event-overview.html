@@ -6,7 +6,8 @@
     <title>Document</title>
  
     <style>
- :root {
+
+        :root {
             --bg-color: #282626;
             --text-color: #FDFDFD;
             --accent-color: #FE0D00;
@@ -27,8 +28,6 @@
             padding-bottom:120px;
         }
 
-        /* HEADER */
-
         .main-header{
             display:flex;
             justify-content:space-between;
@@ -44,16 +43,11 @@
         }
 
         .logo-placeholder{
-            
-            color:white;
             width:60px;
             height:45px;
             display:flex;
             justify-content:center;
             align-items:center;
-            font-weight:bold;
-            font-size:24px;
-            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
         }
 
         .logo-text{
@@ -90,208 +84,171 @@
             background:var(--accent-color);
         }
 
-        /* EVENT PAGE */
+        .event-page{
+            padding-bottom:140px;
+        }
 
-.event-page{
-    padding-bottom:140px;
-}
+        .event-hero{
+            height:425px;
 
-/* HERO */
+            background:
+            radial-gradient(circle at top left, rgba(254,13,0,0.35), transparent 70%),
+            linear-gradient(180deg, #651313 0%, #2A2020 100%);
 
-.event-hero{
-    height:425px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
 
-    background:
-    radial-gradient(circle at top left, rgba(254,13,0,0.35), transparent 70%),
-    linear-gradient(180deg, #651313 0%, #2A2020 100%);
+            padding:40px 32px;
+        }
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+        .hero-content{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            text-align:center;
+        }
 
-    padding:40px 32px;
-}
+        .hero-icon{
+            width:82px;
+            height:82px;
 
-.hero-content{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-}
+            border-radius:24px;
 
-.hero-icon{
-    width:82px;
-    height:82px;
+            background:var(--accent-color);
 
-    border-radius:24px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
 
-    background:var(--accent-color);
+            margin-bottom:32px;
+        }
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+        .hero-icon img{
+            width:34px;
+            height:34px;
+        }
 
-    margin-bottom:32px;
-}
+        .hero-content h1{
+            font-size:28px;
+            line-height:1.3;
+            margin-bottom:18px;
+            font-weight:700;
+        }
 
-.hero-icon img{
-    width:34px;
-    height:34px;
-}
+        .hero-content p{
+            font-size:14px;
+            line-height:1.8;
+            color:#D1CFCF;
+            max-width:250px;
+        }
 
-.hero-content h1{
-    font-size:28px;
-    line-height:1.3;
-    margin-bottom:18px;
-    font-weight:700;
-}
+        .info-section,
+        .expect-section,
+        .button-section{
+            padding:24px;
+        }
 
-.hero-content p{
-    font-size:14px;
-    line-height:1.8;
-    color:#D1CFCF;
-    max-width:250px;
-}
+        .info-card{
+            background:#333131;
+            border-radius:28px;
+            padding:24px;
+            display:flex;
+            gap:18px;
+            border:1px solid rgba(255,255,255,0.04);
+        }
 
+        .info-icon{
+            min-width:48px;
+            height:48px;
+            border-radius:16px;
+            background:#FE0D00;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
 
-.info-section,
-.expect-section,
-.button-section{
-    padding:24px;
-}
+        .info-icon img{
+            width:22px;
+            height:22px;
+        }
 
+        .info-card p{
+            color:#D4D0D0;
+            font-size:14px;
+            line-height:1.9;
+        }
 
+        .expect-section h2{
+            font-size:18px;
+            margin-bottom:22px;
+        }
 
-.info-card{
-    background:#333131;
+        .expect-card{
+            background:#333131;
+            border-radius:22px;
+            padding:22px;
+            display:flex;
+            align-items:flex-start;
+            gap:18px;
+            margin-bottom:16px;
+            border:1px solid rgba(255,255,255,0.04);
+        }
 
-    border-radius:28px;
+        .expect-icon{
+            min-width:40px;
+            height:40px;
+            border-radius:14px;
+            background:rgba(254,13,0,0.08);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
 
-    padding:24px;
+        .expect-icon img{
+            width:18px;
+            height:18px;
+        }
 
-    display:flex;
-    gap:18px;
+        .expect-card p{
+            color:#D5D2D2;
+            font-size:14px;
+            line-height:1.8;
+        }
 
-    border:1px solid rgba(255,255,255,0.04);
-}
+        .event-button{
+            width:100%;
+            height:64px;
+            border:none;
+            border-radius:20px;
+            background:var(--accent-color);
+            color:white;
+            font-size:18px;
+            font-weight:700;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:14px;
+            font-family:var(--font-main);
+            cursor:pointer;
+            transition:0.2s;
+            text-decoration:none;
+        }
 
-.info-icon{
-    min-width:48px;
-    height:48px;
+        .event-button span{
+            font: size 20px;px;
+            margin-top:-2px;
+        }
 
-    border-radius:16px;
-
-    background:#FE0D00;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.info-icon img{
-    width:22px;
-    height:22px;
-}
-
-.info-card p{
-    color:#D4D0D0;
-    font-size:14px;
-    line-height:1.9;
-}
-
-
-
-.expect-section h2{
-    font-size:18px;
-    margin-bottom:22px;
-}
-
-
-
-.expect-card{
-    background:#333131;
-
-    border-radius:22px;
-
-    padding:22px;
-
-    display:flex;
-    align-items:flex-start;
-    gap:18px;
-
-    margin-bottom:16px;
-
-    border:1px solid rgba(255,255,255,0.04);
-}
-
-.expect-icon{
-    min-width:40px;
-    height:40px;
-
-    border-radius:14px;
-
-    background:rgba(254,13,0,0.08);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.expect-icon img{
-    width:18px;
-    height:18px;
-}
-
-.expect-card p{
-    color:#D5D2D2;
-    font-size:14px;
-    line-height:1.8;
-}
-
-
-
-.event-button{
-    width:100%;
-    height:64px;
-
-    border:none;
-    border-radius:20px;
-
-    background:var(--accent-color);
-
-    color:white;
-
-    font-size:18px;
-    font-weight:700;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:14px;
-
-    font-family:var(--font-main);
-
-    cursor:pointer;
-
-    transition:0.2s;
-
-    text-decoration:none;
-}
-
-.event-button span{
-    font-size:24px;
-    margin-top:-2px;
-}
-
-.event-button:hover{
-    transform:translateY(-2px);
-}
+        .event-button:hover{
+            transform:translateY(-2px);
+        }
 
         .bottom-nav{
             position:fixed;
-            bottom:0px;
-            left:0px;
-            right:0px;
+            bottom:0;
+            left:0;
+            right:0;
             background:#2f2d2d;
             padding:18px 10px;
             display:flex;
@@ -300,16 +257,16 @@
             border-top:1px solid #4a4a4a;
         }
 
-       .nav-item{
-    text-decoration:none;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-    color:#8e8e8e;
-    font-size:13px;
-    cursor:pointer;
-}
+        .nav-item{
+            text-decoration:none;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:8px;
+            color:#8e8e8e;
+            font-size:13px;
+            cursor:pointer;
+        }
 
         .nav-icon{
             width:56px;
@@ -323,19 +280,16 @@
             font-size:22px;
         }
 
-      
-
         .nav-item.active .nav-icon{
             background:var(--accent-color);
             color:white;
             border:none;
-            
         }
-
 
     </style>
 
 </head>
+
 <script>
 
     const access = sessionStorage.getItem("eventAccess");
@@ -347,173 +301,411 @@
     }
 
 </script>
+
 <body>
-    
 
-  
+<header class="main-header">
 
-    <header class="main-header">
+    <div class="logo-area">
 
-        <div class="logo-area">
-            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
-
-            <div class="logo-text">
-                <strong>AED STUDIOS</strong>
-                <span>Creative Network</span>
-            </div>
+        <div class="logo-placeholder">
+            <img src="./images/Logo.svg" alt="logo">
         </div>
 
-        <div class="language-toggles">
-            <button class="lang-btn">NL</button>
-            <button class="lang-btn active">EN</button>
-            <button class="lang-btn">FR</button>
+        <div class="logo-text">
+
+            <strong>AED STUDIOS</strong>
+
+            <span>Creative Network</span>
+
         </div>
 
-    </header>
+    </div>
 
+    <div class="language-toggles">
+
+        <button class="lang-btn" id="btn-nl">
+            NL
+        </button>
+
+        <button class="lang-btn active" id="btn-en">
+            EN
+        </button>
+
+        <button class="lang-btn" id="btn-fr">
+            FR
+        </button>
+
+    </div>
+
+</header>
 
 <main class="event-page">
-
-    
 
     <section class="event-hero">
 
         <div class="hero-content">
 
             <div class="hero-icon">
-                <img src="./images/EventIconfull.svg" alt="Event">
+
+                <img
+                    src="./images/EventIconfull.svg"
+                    alt="Event"
+                >
+
             </div>
 
-            <h1>
-                2026 Networking <br>
-                Events
-            </h1>
+            <h1 data-translate="heroTitle"></h1>
 
-            <p>
-                Connect with creatives across all AED Studios
-            </p>
+            <p data-translate="heroSubtitle"></p>
 
         </div>
 
     </section>
-
-    
 
     <section class="info-section">
 
         <div class="info-card">
 
             <div class="info-icon">
-                <img src="./images/Stars.svg" alt="Info">
+
+                <img
+                    src="./images/Stars.svg"
+                    alt="Info"
+                >
+
             </div>
 
-            <p>
-                Every quarter we're hosting an exclusive networking event bringing together professionals from all studios. A unique opportunity to make new connections, share knowledge, and collaborate on future projects.
-            </p>
+            <p data-translate="infoText"></p>
 
         </div>
 
     </section>
-
-    
 
     <section class="expect-section">
 
-        <h2>What to Expect</h2>
-
-        <!-- ITEM -->
+        <h2 data-translate="expectTitle"></h2>
 
         <div class="expect-card">
 
             <div class="expect-icon">
-                <img src="./images/PeopleIcon.svg" alt="People">
+
+                <img
+                    src="./images/PeopleIcon.svg"
+                    alt="People"
+                >
+
             </div>
 
-            <p>
-                Networking opportunities with producers, developers, designers and more
-            </p>
+            <p data-translate="expect1"></p>
 
         </div>
 
-        <!-- ITEM -->
-
         <div class="expect-card">
 
             <div class="expect-icon">
-                <img src="./images/StarIconred.svg" alt="Knowledge">
+
+                <img
+                    src="./images/StarIconred.svg"
+                    alt="Knowledge"
+                >
+
             </div>
 
-            <p>
-                Knowledge sharing about new technologies and creative processes
-            </p>
+            <p data-translate="expect2"></p>
 
         </div>
 
-        <!-- ITEM -->
-
         <div class="expect-card">
 
             <div class="expect-icon">
-                <img src="./images/Calenderred.svg" alt="Projects">
+
+                <img
+                    src="./images/Calenderred.svg"
+                    alt="Projects"
+                >
+
             </div>
 
-            <p>
-                Opportunities for future collaboration and projects
-            </p>
+            <p data-translate="expect3"></p>
 
         </div>
 
     </section>
 
-   
-
     <section class="button-section">
 
-       <a href="EventDatum.html" class="event-button">
+        <a
+            href="EventDatum.html"
+            class="event-button"
+        >
 
-    VIEW AVAILABLE DATES
+            <span data-translate="buttonText"></span>
 
-    <span>→</span>
+            <span>→</span>
 
-</a>
+        </a>
 
     </section>
 
 </main>
 
+<nav class="bottom-nav">
 
-   
+    <a href="index.html" class="nav-item">
 
-   <nav class="bottom-nav">
-
-    <a href="index.html" class="nav-item ">
         <div class="nav-icon">
-            <img src="./images/HomeIcon.svg" alt="Home">
+
+            <img
+                src="./images/HomeIcon.svg"
+                alt="Home"
+            >
+
         </div>
-        <span>Home</span>
+
+        <span data-translate="navHome"></span>
+
     </a>
 
     <a href="map.html" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/MapIcontrans.svg" alt="Map">
+
+            <img
+                src="./images/MapIcontrans.svg"
+                alt="Map"
+            >
+
         </div>
-        <span>Map</span>
+
+        <span data-translate="navMap"></span>
+
     </a>
 
     <a href="overview.html" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/StudioIcontrans.svg" alt="Studio's">
+
+            <img
+                src="./images/StudioIcontrans.svg"
+                alt="Studio's"
+            >
+
         </div>
-        <span>Studio's</span>
+
+        <span data-translate="navStudios"></span>
+
     </a>
 
     <a href="events.html" class="nav-item active">
+
         <div class="nav-icon">
-            <img src="./images/EventIconfull.svg" alt="Event">
+
+            <img
+                src="./images/EventIconfull.svg"
+                alt="Event"
+            >
+
         </div>
-        <span>Event</span>
+
+        <span data-translate="navEvent"></span>
+
     </a>
 
 </nav>
+
+<script>
+
+    const translations = {
+
+        en: {
+
+            heroTitle:
+                "2026 Networking Events",
+
+            heroSubtitle:
+                "Connect with creatives across all AED Studios",
+
+            infoText:
+                "Every quarter we're hosting an exclusive networking event bringing together professionals from all studios. A unique opportunity to make new connections, share knowledge, and collaborate on future projects.",
+
+            expectTitle:
+                "What to Expect",
+
+            expect1:
+                "Networking opportunities with producers, developers, designers and more",
+
+            expect2:
+                "Knowledge sharing about new technologies and creative processes",
+
+            expect3:
+                "Opportunities for future collaboration and projects",
+
+            buttonText:
+                "VIEW AVAILABLE DATES",
+
+            navHome:
+                "Home",
+
+            navMap:
+                "Map",
+
+            navStudios:
+                "Studios",
+
+            navEvent:
+                "Event"
+
+        },
+
+        nl: {
+
+            heroTitle:
+                "2026 Networking Events",
+
+            heroSubtitle:
+                "Connecteer met creatives verspreid over alle AED Studios",
+
+            infoText:
+                "Elk kwartaal organiseren we een exclusief networking event dat professionals uit alle studio’s samenbrengt. Een unieke kans om nieuwe connecties te maken, kennis te delen en samen te werken aan toekomstige projecten.",
+
+            expectTitle:
+                "Wat Kan Je Verwachten",
+
+            expect1:
+                "Netwerkmogelijkheden met producers, developers, designers en meer",
+
+            expect2:
+                "Kennisdeling over nieuwe technologieën en creatieve processen",
+
+            expect3:
+                "Kansen voor toekomstige samenwerkingen en projecten",
+
+            buttonText:
+                "BEKIJK BESCHIKBARE DATA",
+
+            navHome:
+                "Home",
+
+            navMap:
+                "Kaart",
+
+            navStudios:
+                "Studio's",
+
+            navEvent:
+                "Event"
+
+        },
+
+        fr: {
+
+            heroTitle:
+                "Événements Networking 2026",
+
+            heroSubtitle:
+                "Connectez-vous avec les créatifs de tous les AED Studios",
+
+            infoText:
+                "Chaque trimestre, nous organisons un événement de networking exclusif réunissant des professionnels de tous les studios. Une opportunité unique de créer de nouvelles connexions, partager des connaissances et collaborer sur de futurs projets.",
+
+            expectTitle:
+                "À Quoi S'attendre",
+
+            expect1:
+                "Opportunités de networking avec des producteurs, développeurs, designers et plus encore",
+
+            expect2:
+                "Partage de connaissances sur les nouvelles technologies et les processus créatifs",
+
+            expect3:
+                "Opportunités de collaborations et projets futurs",
+
+            buttonText:
+                "VOIR LES DATES DISPONIBLES",
+
+            navHome:
+                "Accueil",
+
+            navMap:
+                "Carte",
+
+            navStudios:
+                "Studios",
+
+            navEvent:
+                "Événement"
+
+        }
+
+    };
+
+    function setLanguage(language){
+
+        localStorage.setItem(
+            "language",
+            language
+        );
+
+        document
+        .querySelectorAll(".lang-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        document
+        .getElementById(`btn-${language}`)
+        .classList.add("active");
+
+        document
+        .querySelectorAll("[data-translate]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.translate;
+
+            element.textContent =
+                translations[language][key];
+
+        });
+
+    }
+
+    document
+    .getElementById("btn-nl")
+    .addEventListener("click", () => {
+
+        setLanguage("nl");
+
+    });
+
+    document
+    .getElementById("btn-en")
+    .addEventListener("click", () => {
+
+        setLanguage("en");
+
+    });
+
+    document
+    .getElementById("btn-fr")
+    .addEventListener("click", () => {
+
+        setLanguage("fr");
+
+    });
+
+    const savedLanguage =
+
+        localStorage.getItem("language")
+
+        || "en";
+
+    setLanguage(savedLanguage);
+
+</script>
+
 </body>
 </html>
