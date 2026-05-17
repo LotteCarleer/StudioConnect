@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       
+       :root {
+            --bg-color: #282626;
+            --text-color: #FDFDFD;
+            --accent-color: #FE0D00;
+            --card-bg: #333131;
+            --font-main: 'Rubik', sans-serif;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            padding-bottom:120px;
+        }
+
+        /* HEADER */
+
+        .main-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px;
+            border-bottom:1px solid #fe0d005a;
+        }
+
+        .logo-area{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .logo-placeholder{
+            
+            color:white;
+            width:60px;
+            height:45px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-weight:bold;
+            font-size:24px;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+        }
+
+        .logo-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .logo-text strong{
+            font-size:16px;
+        }
+
+        .logo-text span{
+            color:#888;
+            font-size:12px;
+        }
+
+        .language-toggles{
+            display:flex;
+            gap:8px;
+        }
+
+        .lang-btn{
+            background:#444;
+            color:white;
+            border:none;
+            padding:8px 14px;
+            border-radius:8px;
+            font-family:var(--font-main);
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .lang-btn.active{
+            background:var(--accent-color);
+        }
+
+       
+
+.dates-page{
+    padding-bottom:140px;
+}
+
+
+
+.top-section{
+    padding:20px 24px;
+
+    border-top:1px solid rgba(255,0,0,0.15);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+/* BACK BUTTON */
+
+.back-btn{
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:white;
+
+    font-size:16px;
+    font-weight:600;
+
+    font-family:var(--font-main);
+
+    cursor:pointer;
+
+    width:fit-content;
+}
+
+.back-btn span{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:#3A3838;
+
+    border:1px solid #4E4B4B;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+
+    padding-bottom:2px;
+
+    transition:0.2s;
+}
+
+/* HOVER */
+
+.back-btn:hover span{
+    background:#4A4747;
+    border-color:#666;
+}
+
+/* ACTIVE */
+
+.back-btn:active span{
+    transform:scale(0.96);
+}
+
+
+
+.title-section{
+    padding:28px 24px;
+}
+
+.title-section h1{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.title-section p{
+    color:#8F8B8B;
+    font-size:14px;
+}
+
+
+
+.dates-list{
+    padding:0 24px;
+}
+
+
+
+.date-card{
+    background:#3A3737;
+
+    border-radius:28px;
+
+    padding:24px;
+
+    margin-bottom:26px;
+
+    border:2px solid transparent;
+
+    transition:0.2s;
+
+    cursor:pointer;
+}
+
+
+
+.date-card.active{
+    border:2px solid var(--accent-color);
+
+    box-shadow:
+    0 0 0 1px rgba(255,0,0,0.2),
+    0 10px 30px rgba(0,0,0,0.25);
+}
+
+
+
+.date-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:14px;
+}
+
+/* ICON */
+
+.date-icon{
+    width:40px;
+    height:40px;
+
+    border-radius:14px;
+
+    background:rgba(254,13,0,0.12);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+.date-icon img{
+    width:18px;
+    height:18px;
+}
+
+
+
+.date-title{
+    font-size:16px;
+    font-weight:700;
+}
+
+.date-info{
+    color:#D4D1D1;
+    font-size:14px;
+}
+
+
+.spots{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-top:8px;
+    margin-bottom:12px;
+
+    font-weight:600;
+}
+
+/* PROGRESS */
+
+.progress-bar{
+    width:100%;
+    height:8px;
+
+    background:#575353;
+
+    border-radius:20px;
+
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        #FF2B14,
+        #B9291C
+    );
+
+    border-radius:20px;
+}
+
+/* BUTTON */
+
+.bottom-button{
+    position:fixed;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    background:#2B2929;
+
+    padding:26px 24px;
+
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+#continueBtn{
+    width:100%;
+    height:64px;
+
+    border:none;
+    border-radius:20px;
+
+    background:#4A4747;
+
+    color:#868181;
+
+    font-size:18px;
+    font-weight:700;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+
+    font-family:var(--font-main);
+
+    transition:0.2s;
+
+    cursor:not-allowed;
+}
+
+
+
+#continueBtn.active{
+    background:var(--accent-color);
+
+    color:white;
+
+    cursor:pointer;
+}
+
+#continueBtn span{
+    font-size:24px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+     <header class="main-header">
+
+        <div class="logo-area">
+            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
+
+            <div class="logo-text">
+                <strong>AED STUDIOS</strong>
+                <span>Creative Network</span>
+            </div>
+        </div>
+
+        <div class="language-toggles">
+            <button class="lang-btn">NL</button>
+            <button class="lang-btn active">EN</button>
+            <button class="lang-btn">FR</button>
+        </div>
+
+    </header>
+   
+    <!-- DATE PAGE -->
+
+<main class="dates-page">
+
+    <!-- TOP BAR -->
+
+    <section class="top-section">
+
+    <a href="event-overview.html" class="back-btn">
+
+        <span>←</span>
+
+        Go back
+
+    </a>
+
+</section>
+
+    <!-- TITLE -->
+
+    <section class="title-section">
+
+        <h1>Choose a Date</h1>
+
+        <p>Select the event that works best for you</p>
+
+    </section>
+
+    <!-- DATE LIST -->
+
+    <section class="dates-list" id="datesList">
+
+        <!-- JS GENERATED -->
+
+    </section>
+
+    <!-- BUTTON -->
+
+    <section class="bottom-button">
+
+        <button id="continueBtn">
+
+            CONTINUE TO REGISTRATION
+
+            <span>→</span>
+
+        </button>
+
+    </section>
+
+</main>
+    
+ <script>
+
+/* DATABASE READY STRUCTURE */
+
+const eventDates = [
+
+    {
+        id: 1,
+        date: "June 15, 2026",
+        time: "18:00 - 22:00",
+        location: "Studio 1",
+
+        maxSpots: 60,
+        registrations: 0
+    },
+
+    {
+        id: 2,
+        date: "September 22, 2026",
+        time: "18:00 - 22:00",
+        location: "Studio 1",
+
+        maxSpots: 60,
+        registrations: 0
+    },
+
+    {
+        id: 3,
+        date: "December 20, 2026",
+        time: "18:00 - 22:00",
+        location: "Studio 1",
+
+        maxSpots: 60,
+        registrations: 0
+    },
+
+    {
+        id: 4,
+        date: "March 19, 2027",
+        time: "18:00 - 22:00",
+        location: "Studio 1",
+
+        maxSpots: 60,
+        registrations: 0
+    }
+
+];
+
+/* SELECTED DATE */
+
+let selectedDate = null;
+
+const datesList = document.getElementById("datesList");
+const continueBtn = document.getElementById("continueBtn");
+
+/* BUILD CARDS */
+
+eventDates.forEach(event => {
+
+    /* AUTO CALCULATIONS */
+
+    const availableSpots =
+        event.maxSpots - event.registrations;
+
+    const progress =
+        (event.registrations / event.maxSpots) * 100;
+
+    /* CARD */
+
+    datesList.innerHTML += `
+
+        <div class="date-card" data-id="${event.id}">
+
+            <div class="date-row">
+
+                <div class="date-icon">
+                    <img src="./images/EventRed.svg">
+                </div>
+
+                <div class="date-title">
+                    ${event.date}
+                </div>
+
+            </div>
+
+            <div class="date-row">
+
+                <div class="date-icon">
+                    <img src="./images/ClockRed.svg">
+                </div>
+
+                <div class="date-info">
+                    ${event.time}
+                </div>
+
+            </div>
+
+            <div class="date-row">
+
+                <div class="date-icon">
+                    <img src="./images/LocationRed.svg">
+                </div>
+
+                <div class="date-info">
+                    ${event.location}
+                </div>
+
+            </div>
+
+            <div class="spots">
+
+                <img src="./images/PeopleRed.svg">
+
+                <span>
+                    ${availableSpots} spots available
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div 
+                    class="progress-fill"
+                    style="width:${progress}%"
+                ></div>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+
+/* SELECT ONLY ONE DATE */
+
+const cards = document.querySelectorAll(".date-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        /* REMOVE ACTIVE */
+
+        cards.forEach(c => 
+            c.classList.remove("active")
+        );
+
+        /* ACTIVE CARD */
+
+        card.classList.add("active");
+
+        /* SAVE DATE */
+
+        selectedDate = card.dataset.id;
+
+        /* ACTIVATE BUTTON */
+
+        continueBtn.classList.add("active");
+
+    });
+
+});
+
+/* CONTINUE */
+
+continueBtn.addEventListener("click", () => {
+
+    if(!selectedDate) return;
+
+    /* SAVE FOR NEXT PAGE */
+
+    localStorage.setItem(
+        "selectedEventDate",
+        selectedDate
+    );
+
+    /* NEXT PAGE */
+
+    window.location.href =
+        "registration.html";
+
+});
+</script>
+
+
+</body>
+</html>
