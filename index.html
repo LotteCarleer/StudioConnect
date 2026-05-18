@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>AED Studios - Home</title>
 
-    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -31,8 +30,6 @@
             padding-bottom:120px;
         }
 
-        /* HEADER */
-
         .main-header{
             display:flex;
             justify-content:space-between;
@@ -48,16 +45,11 @@
         }
 
         .logo-placeholder{
-            
-            color:white;
             width:60px;
             height:45px;
             display:flex;
             justify-content:center;
             align-items:center;
-            font-weight:bold;
-            font-size:24px;
-            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
         }
 
         .logo-text{
@@ -94,8 +86,6 @@
             background:var(--accent-color);
         }
 
-        /* MAIN CONTENT */
-
         main{
             padding:20px;
         }
@@ -105,8 +95,6 @@
             margin-bottom:20px;
             font-weight:700;
         }
-
-        /* PRODUCTIE CARDS */
 
         .production-list{
             display:flex;
@@ -178,8 +166,6 @@
             box-shadow:0 10px 25px rgba(0,0,0,0.25);
         }
 
-        /* BEDRIJVEN */
-
         .company-grid{
             display:grid;
             grid-template-columns:1fr 1fr;
@@ -213,31 +199,27 @@
             font-size:14px;
         }
 
-        /* BOTTOM NAV */
-
         .bottom-nav{
             position:fixed;
-            bottom:0px;
-            left:0px;
-            right:0px;
+            bottom:0;
+            left:0;
+            right:0;
             background:#2f2d2d;
             padding:18px 10px;
             display:flex;
             justify-content:space-around;
-            box-shadow:0 15px 35px rgba(0,0,0,0.4);
             border-top:1px solid #4a4a4a;
         }
 
-      .nav-item{
-    text-decoration:none;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-    color:#8e8e8e;
-    font-size:13px;
-    cursor:pointer;
-}
+        .nav-item{
+            text-decoration:none;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:8px;
+            color:#8e8e8e;
+            font-size:13px;
+        }
 
         .nav-icon{
             width:56px;
@@ -248,256 +230,422 @@
             display:flex;
             justify-content:center;
             align-items:center;
-            font-size:22px;
         }
-
-      
 
         .nav-item.active .nav-icon{
             background:var(--accent-color);
-            color:white;
             border:none;
-            
         }
 
     </style>
 </head>
 <body>
 
-  
+<header class="main-header">
 
-    <header class="main-header">
+    <div class="logo-area">
 
-        <div class="logo-area">
-            <div class="logo-placeholder"><img src="./images/Logo.svg" alt="logo"></div>
-
-            <div class="logo-text">
-                <strong>AED STUDIOS</strong>
-                <span>Creative Network</span>
-            </div>
+        <div class="logo-placeholder">
+            <img src="./images/Logo.svg" alt="logo">
         </div>
 
-        <div class="language-toggles">
-            <button class="lang-btn">NL</button>
-            <button class="lang-btn active">EN</button>
-            <button class="lang-btn">FR</button>
+        <div class="logo-text">
+
+            <strong>AED STUDIOS</strong>
+
+            <span>Creative Network</span>
+
         </div>
 
-    </header>
+    </div>
 
-    
+    <div class="language-toggles">
 
-    <main>
+        <button class="lang-btn" id="btn-nl">
+            NL
+        </button>
 
-       
+        <button class="lang-btn active" id="btn-en">
+            EN
+        </button>
 
-        <section>
+        <button class="lang-btn" id="btn-fr">
+            FR
+        </button>
 
-            <h2 class="section-title">Actieve Producties</h2>
+    </div>
 
-            <div class="production-list" id="production-list">
+</header>
 
-               
+<main>
 
-            </div>
+    <section>
 
-        </section>
+        <h2
+            class="section-title"
+            data-translate="activeProductions"
+        ></h2>
 
-        
+        <div class="production-list" id="production-list"></div>
 
-        <section>
+    </section>
 
-            <h2 class="section-title">Bedrijven Op Locatie</h2>
+    <section>
 
-            <div class="company-grid" id="company-grid">
+        <h2
+            class="section-title"
+            data-translate="companiesOnSite"
+        ></h2>
 
-             
+        <div class="company-grid" id="company-grid"></div>
 
-            </div>
+    </section>
 
-        </section>
+</main>
 
-    </main>
-
-   
-
- <nav class="bottom-nav">
+<nav class="bottom-nav">
 
     <a href="index.html" class="nav-item active">
+
         <div class="nav-icon">
-            <img src="./images/HomeIconfull.svg" alt="Home">
+            <img src="./images/HomeIconfull.svg">
         </div>
-        <span>Home</span>
+
+        <span data-translate="navHome"></span>
+
     </a>
 
     <a href="map.html" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/MapIcontrans.svg" alt="Map">
+            <img src="./images/MapIcontrans.svg">
         </div>
-        <span>Map</span>
+
+        <span data-translate="navMap"></span>
+
     </a>
 
     <a href="overview.html" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/StudioIcontrans.svg" alt="Studio's">
+            <img src="./images/StudioIcontrans.svg">
         </div>
-        <span>Studio's</span>
+
+        <span data-translate="navStudios"></span>
+
     </a>
 
-   <a href="#" id="eventNavBtn" class="nav-item">
+    <a href="#" id="eventNavBtn" class="nav-item">
+
         <div class="nav-icon">
-            <img src="./images/EventIcontrans.svg" alt="Event">
+            <img src="./images/EventIcontrans.svg">
         </div>
-        <span>Event</span>
+
+        <span data-translate="navEvent"></span>
+
     </a>
 
 </nav>
 
- <script>
+<script>
 
-       
+    const translations = {
 
-        const productions = [
+        en: {
 
-            {
-                title: "Famille",
-                studio: "Studio 1",
-                company: "Banijay",
-                time: "08:00 - 18:00",
-                image: "./images/Familie (1).png"
-            },
+            activeProductions:
+                "Active Productions",
 
-            {
-                title: "The Voice",
-                studio: "Studio 3",
-                company: "Talpa Network",
-                time: "10:00 - 22:00",
-                image: "./images/Voice (1).png"
-            },
+            companiesOnSite:
+                "Companies On Site",
 
-            {
-                title: "Quiz with Balls",
-                studio: "Studio 5",
-                company: "Endemol Shine",
-                time: "14:00 - 20:00",
-                image: "./images/quiz (1).png"
-            }
+            navHome:
+                "Home",
 
-        ];
+            navMap:
+                "Map",
 
-        const companies = [
+            navStudios:
+                "Studios",
 
-            {
-                title: "De mensen",
-                studio: "Studio 5, Studio 7",
-                image: "./images/De mensen (1).png"
-            },
+            navEvent:
+                "Event"
 
-            {
-                title: "Banijay",
-                studio: "Studio 1 & 2",
-                image: "./images/Banijay (1).png"
-            },
-            
-            {
-                title: "VRT",
-                studio: "Studio 4",
-                image: "./images/Vrt (1).png"
-            },
-            
-            {
-                title: "Talpa Network",
-                studio: "Studio 3",
-                image: "./images/Talpe network (1).png"
-            }
+        },
 
-        ];
+        nl: {
 
-        
+            activeProductions:
+                "Actieve Producties",
 
-        const productionList = document.getElementById('production-list');
+            companiesOnSite:
+                "Bedrijven Op Locatie",
 
-        productions.forEach(item => {
+            navHome:
+                "Home",
 
-            productionList.innerHTML += `
+            navMap:
+                "Kaart",
 
-                <div class="production-card">
+            navStudios:
+                "Studio's",
 
-                    <div class="production-left">
+            navEvent:
+                "Event"
 
-                        <div class="play-btn">
-                            <div class="play-icon"></div>
-                        </div>
+        },
 
-                        <div class="production-info">
-                            <h3>${item.title}</h3>
-                            <p>${item.studio}</p>
-                            <p>${item.company}</p>
-                            <div class="time">${item.time}</div>
+        fr: {
+
+            activeProductions:
+                "Productions Actives",
+
+            companiesOnSite:
+                "Entreprises Sur Site",
+
+            navHome:
+                "Accueil",
+
+            navMap:
+                "Carte",
+
+            navStudios:
+                "Studios",
+
+            navEvent:
+                "Événement"
+
+        }
+
+    };
+
+    function setLanguage(language){
+
+        localStorage.setItem(
+            "language",
+            language
+        );
+
+        document
+        .querySelectorAll(".lang-btn")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+        document
+        .getElementById(`btn-${language}`)
+        .classList.add("active");
+
+        document
+        .querySelectorAll("[data-translate]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.translate;
+
+            element.textContent =
+                translations[language][key];
+
+        });
+
+    }
+
+    document
+    .getElementById("btn-nl")
+    .addEventListener("click", () => {
+
+        setLanguage("nl");
+
+    });
+
+    document
+    .getElementById("btn-en")
+    .addEventListener("click", () => {
+
+        setLanguage("en");
+
+    });
+
+    document
+    .getElementById("btn-fr")
+    .addEventListener("click", () => {
+
+        setLanguage("fr");
+
+    });
+
+    const savedLanguage =
+
+        localStorage.getItem("language")
+
+        || "en";
+
+    setLanguage(savedLanguage);
+
+    const productions = [
+
+        {
+            title: "Famille",
+            studio: "Studio 1",
+            company: "Banijay",
+            time: "08:00 - 18:00",
+            image: "./images/Familie (1).png"
+        },
+
+        {
+            title: "The Voice",
+            studio: "Studio 3",
+            company: "Talpa Network",
+            time: "10:00 - 22:00",
+            image: "./images/Voice (1).png"
+        },
+
+        {
+            title: "Quiz with Balls",
+            studio: "Studio 5",
+            company: "Endemol Shine",
+            time: "14:00 - 20:00",
+            image: "./images/quiz (1).png"
+        }
+
+    ];
+
+    const companies = [
+
+        {
+            title: "De mensen",
+            studio: "Studio 5, Studio 7",
+            image: "./images/De mensen (1).png"
+        },
+
+        {
+            title: "Banijay",
+            studio: "Studio 1 & 2",
+            image: "./images/Banijay (1).png"
+        },
+
+        {
+            title: "VRT",
+            studio: "Studio 4",
+            image: "./images/Vrt (1).png"
+        },
+
+        {
+            title: "Talpa Network",
+            studio: "Studio 3",
+            image: "./images/Talpe network (1).png"
+        }
+
+    ];
+
+    const productionList =
+        document.getElementById(
+            'production-list'
+        );
+
+    productions.forEach(item => {
+
+        productionList.innerHTML += `
+
+            <div class="production-card">
+
+                <div class="production-left">
+
+                    <div class="play-btn">
+
+                        <div class="play-icon"></div>
+
+                    </div>
+
+                    <div class="production-info">
+
+                        <h3>${item.title}</h3>
+
+                        <p>${item.studio}</p>
+
+                        <p>${item.company}</p>
+
+                        <div class="time">
+                            ${item.time}
                         </div>
 
                     </div>
 
-                    <img class="production-image" src="${item.image}" alt="${item.title}">
-
                 </div>
 
-            `;
-        });
+                <img
+                    class="production-image"
+                    src="${item.image}"
+                >
 
-       
+            </div>
 
-        const companyGrid = document.getElementById('company-grid');
-
-        companies.forEach(item => {
-
-            companyGrid.innerHTML += `
-
-                <div class="company-card">
-
-                    <img class="company-logo" src="${item.image}" alt="${item.title}">
-
-                    <h3>${item.title}</h3>
-
-                    <p>${item.studio}</p>
-
-                </div>
-
-            `;
-        });
-
-        
-
-
-    const eventNavBtn = document.getElementById("eventNavBtn");
-
-    eventNavBtn.addEventListener("click", (e) => {
-
-        e.preventDefault();
-
-        const access = sessionStorage.getItem("eventAccess");
-
-        /* AL INGELOGD */
-
-        if(access === "granted"){
-
-            window.location.href = "event-overview.html";
-
-        }
-
-        /* NIET INGELOGD */
-
-        else{
-
-            window.location.href = "EventCode.html";
-
-        }
+        `;
 
     });
 
+    const companyGrid =
+        document.getElementById(
+            'company-grid'
+        );
 
+    companies.forEach(item => {
 
-    </script>  
+        companyGrid.innerHTML += `
+
+            <div class="company-card">
+
+                <img
+                    class="company-logo"
+                    src="${item.image}"
+                >
+
+                <h3>${item.title}</h3>
+
+                <p>${item.studio}</p>
+
+            </div>
+
+        `;
+
+    });
+
+    const eventNavBtn =
+        document.getElementById(
+            "eventNavBtn"
+        );
+
+    eventNavBtn.addEventListener(
+        "click",
+        (e) => {
+
+            e.preventDefault();
+
+            const access =
+                sessionStorage.getItem(
+                    "eventAccess"
+                );
+
+            if(access === "granted"){
+
+                window.location.href =
+                    "event-overview.html";
+
+            }
+
+            else{
+
+                window.location.href =
+                    "EventCode.html";
+
+            }
+
+        }
+    );
+
+</script>
 
 </body>
 </html>
